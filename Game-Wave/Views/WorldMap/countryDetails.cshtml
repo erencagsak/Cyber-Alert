@@ -1,0 +1,61 @@
+﻿@model List<EntityLayer.Entities.WorldCountries> 
+@{
+    Layout = "~/Views/Shared/CyberAlert.cshtml";
+}
+
+<h2>ÜLKE HAKKINDA AYRINTILI BİLGİ</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Ülke Adı</th>
+        <th>Ülke Cumhurbaşkanı</th>
+        <th>Ülke Kuruluş Tarihi</th>
+        <th>Ülke Nüfus</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.countryName</td>
+            <td>@item.countryLeader</td>
+            <td>@item.countryDate</td>
+            <td>@item.population</td>
+        </tr>
+    }
+</table>
+
+<br />
+<br />
+
+<table style="font-size:20px" class="table table-bordered">
+    <tr>
+        <th>Ülkede Görülen Çeşitli Fidye Yazılımları</th>
+    </tr>
+    <tr>
+        <td><img src="~/Content/images/fidyeler.png" /></td>
+    </tr>
+</table>
+
+<table style="font-size:20px" class="table table-bordered">
+    <tr>
+        <th>Ülkede Saldırılar Nerelere Yapılıyor ?</th>
+        <th>Saldırı Konumları</th>
+    </tr>
+    <tr>
+        <td><img src="~/Content/images/saldiri.png" /></td>
+        <td>
+            <a style="color:black">Government:</a> Hükümet
+            <br />
+            <a style="color:black">Construction:</a> İnşaat Sektörü
+            <br />
+            <a style="color:black">Agriculture:</a> Tarım Sektörü
+            <br />
+            <a style="color:black">Telecommunication:</a> Telekomüni̇kasyon
+            <br />
+            <a style="color:black">Manufacturing:</a> Üretim Sektörü
+            <br />
+            <a style="color:black">E-Commerce:</a> E-Ticaret
+            <br />
+            <a style="color:black">Banking & Finance:</a> Banka ve Finans
+        </td>
+    </tr>
+</table>

@@ -1,0 +1,145 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/CyberAlert.cshtml";
+}
+
+<head>
+    <style>
+        body {
+            background-color: #f2f2f2;
+        }
+
+        .heading {
+            width: 90%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            margin: 20px auto;
+        }
+
+            .heading h1 {
+                font-size: 50px;
+                color: #000;
+                margin-bottom: 25px;
+                position: relative;
+            }
+
+                .heading h1::after {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    height: 4px;
+                    display: block;
+                    margin: 0 auto;
+                    background-color: #4caf50;
+                }
+
+            .heading p {
+                font-size: 18px;
+                color: #666;
+                margin-bottom: 35px;
+            }
+
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            padding: 10px 20px;
+        }
+
+        .about {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .about-image {
+            flex: 1;
+            margin-right: 40px;
+            overflow: hidden;
+        }
+
+            .about-image img {
+                max-width: 100%;
+                height: 580px;
+                display: block;
+                transition: 0.5s ease;
+            }
+
+            .about-image:hover img {
+                transform: scale(1.2)
+            }
+
+        .about-content {
+            flex: 1;
+        }
+
+            .about-content h2 {
+                font-size: 23px;
+                margin-bottom: 15px;
+                color: #333;
+            }
+
+            .about-content p {
+                font-size: 18px;
+                line-height: 1.5;
+                color: #666;
+            }
+
+            .about-content .read-more {
+                display: inline-block;
+                padding: 10px 20px;
+                color: #fff;
+                font-size: 19px;
+                text-decoration: none;
+                border-radius: 25px;
+                margin-top: 15px;
+                transition: 0.3s ease;
+            }
+
+            .container {
+                display: flex;
+            }
+            .container img {
+                margin-right: 50px; /* Opsiyonel: Aralarına boşluk koymak için */
+            }
+    </style>
+</head>
+
+<div>
+    <h1 style="text-align:center;color:black">HAKKIMIZDA</h1>
+</div>
+
+<hr />
+<br />
+
+<div class="container">
+    <section class="about">
+        <div class="about-image">
+            <img src="https://cdn.builtin.com/cdn-cgi/image/f=auto,fit=cover,w=1200,h=635,q=80/https://builtin.com/sites/www.builtin.com/files/2022-08/warning-cybersecurity-types-of-cyber-attacks.png" />
+        </div>
+        <div style="border:groove 2px; padding:15px" class="about-content">
+            <p>Cyber-Alert, inovasyon ve yaratıcılıkla dolu bir yolculuğun ürünüdür. Amacımız, kullanıcılarımıza en iyi deneyimi sunmak, yaşamlarını kolaylaştırmak ve günlük rutinlerine değer katmaktır.</p>
+            <p>Her geçen gün değişen ve gelişen teknoloji dünyasında, biz de bu değişimin bir parçası olarak en yeni trendleri ve teknolojileri yakından takip ediyoruz. Takımımız, alanında uzman, yaratıcı ve tutkulu bireylerden oluşmaktadır. Her biri kendi uzmanlık alanında en iyisini yapmaya odaklanmış olan ekibimiz, sizlere en iyi hizmeti sunmak için gece gündüz çalışmaktadır.</p>
+            <p>Projelerimizde kullanıcı odaklı yaklaşımı benimseyerek, ihtiyaçlarınıza en uygun çözümleri sunmayı hedefliyoruz. Müşteri memnuniyeti, kalite ve güvenilirlik, bizim için vazgeçilmez değerlerdir.</p>
+            <p>Geleceğe dair büyük hedeflerimiz var ve bu hedeflere ulaşırken siz değerli kullanıcılarımızın da desteğini almak bizim için çok önemli. Sürekli gelişim ve yenilik anlayışımızla, her zaman daha iyisini yapmak için buradayız.</p>
+            <p>Bize olan güveniniz için teşekkür ederiz. Daha fazla bilgi ve destek için bizimle iletişime geçmekten çekinmeyin.</p>
+        </div>
+    </section>
+</div>
+
+<div style="margin-left:700px" class="container">
+    <img style="width:70px;height:70px;" src="https://upload.wikimedia.org/wikipedia/commons/c/c2/GitHub_Invertocat_Logo.svg" />
+    <img style="width:70px;height:70px;" src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" />
+</div>
+
+<div>
+    <a style="margin-left:730px" href="https://github.com/erencagsak">GitHub</a>
+    <a style="margin-left:70px" href="https://www.linkedin.com/in/erencagsak">Linkedin</a>
+</div>
+
+
+

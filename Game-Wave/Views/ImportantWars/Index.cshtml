@@ -1,0 +1,238 @@
+﻿@model List<EntityLayer.Entities.Phone>
+@{
+    ViewBag.Title = "Index";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nano Folio - Simple HTML Template</title>
+    <link rel="stylesheet" href="fontawesome/css/all.min.css"> <!-- https://fontawesome.com/ -->
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet"> <!-- https://fonts.google.com/ -->
+    <link href="~/Content/wars_css/magnific-popup.min.css" rel="stylesheet">
+    <link href="~/Content/wars_css/tooplate-style.css" rel="stylesheet">
+</head>
+<body>
+    <div>
+        <h3 style=color:red>Siber saldırı nedir?</h3>
+        <h5 style="max-width:1050px; margin-left:70px; font-size:20px">
+
+            Bilgi sistemlerini, altyapıları, bilgisayar ağlarını, kişisel cihazları hedefleyen, genellikle hassas ve önemli bilgilerin saklandığı bir sisteme girerek belirli bir hedefi çalan, değiştiren veya yok eden saldırganın anonim olduğu her türlü saldırı türüne siber saldırı adı veriliyor.
+
+            Siber suçların küresel maliyetinin 2025 yılına kadar 10,5 trilyon dolara ulaşması bekleniyor. Yaşananları bilmek ileride yaşanacaklar için önlem almamıza yardımcı olabilir.
+        </h5>
+    </div>
+
+    <div>
+        <h3 style=color:red>Tarihte Gerçekleşmiş Önemli Saldırılar</h3>
+    </div>
+
+    <div class="tm-container-fluid">
+        <section class="tm-flex-center tm-mb-50 tm-bgcolor-1 tm-border-rounded">
+            <i class="fas fa-heart fa-3x"></i>
+            <h1 style="color:black; font-family:Arial, Helvetica, sans-serif, Times, serif">1. Melissa Virüsü</h1> 
+            <h3 style="color:black; font-family:Arial, Helvetica, sans-serif, Times, serif; padding-left:30px">
+                Melissa virüsü, istenmeyen e-posta eklerinin açılması nedeniyle hızla yayılması nedeniyle 1999 yılında tanındı. Microsoft Word ve Outlook tabanlı sistemleri hedef almıştır.
+
+                Bu virüs, daha güçlü başka virüslerin yaratılmasına ilham vermiş ve dijital güvenlik konusundaki endişeleri pekiştirmiştir.
+            </h3>
+        </section>
+
+        <section class="tm-flex-center tm-mb-50 tm-bgcolor-2 tm-border-rounded">
+            <i class="fas fa-heart fa-3x"></i>
+            <h1 style="color:black; font-family:Arial, Helvetica, sans-serif, Times, serif">2. Colonial Pipeline (Kolonyal boru hattı)<img style="margin-left:20px;width:130px;height:130px" src="https://antivirus.com.tr/wp-content/uploads/2023/09/COLONIAL_HACK-1024x683.jpeg" /></h1>
+            <h3 style="color:black; font-family:Arial, Helvetica, sans-serif, Times, serif; padding-left:30px">
+                Mayıs 2021’de Amerikan petrol boru hattı şirketi Colonial Pipeline, benzin dağıtımı ve nakliyesinin yanı sıra cihaz ve gaz boru hatlarından oluşan altyapısını etkileyen bir siber saldırının hedefi oldu.
+
+                Şirket, zararlı yazılımların boru hatlarından petrol akışını kontrol eden sisteme bulaşmasından sonra boru hattını kapatmak zorunda kaldı. FBI ile çalışmış ve Bitcoin üzerinden 4,4 milyon dolar fidye ödemiş olmasına rağmen sistemler operasyonel nedenlerle birkaç gün boyunca kapalı kaldı.
+
+                Bu saldırının gerçek dünyaya etkileri oldu; Virginia gibi en çok etkilenen eyaletlerde benzin istasyonlarının %71’inin yakıtı tükendi. Büyük olumsuz etkiye rağmen, hiç kimse saldırıyla resmi olarak suçlanmadı ve sorumlular bugün bile belirsizliğini koruyor.
+            </h3>
+        </section>
+
+        <section class="tm-flex-center tm-mb-50 tm-bgcolor-3 tm-border-rounded">
+            <i class="fas fa-heart fa-3x"></i>
+            <h1 style="color:black; font-family:Arial, Helvetica, sans-serif, Times, serif">3. Sony’ye siber saldırı<img style="margin-left:20px;width:130px;height:130px" src="https://antivirus.com.tr/wp-content/uploads/2023/09/shutterstock_1439304680.jpg" /></h1>
+            <h3 style="color:black; font-family:Arial, Helvetica, sans-serif, Times, serif; padding-left:30px">
+                Kötü niyetli kişiler Playstation Network (PSN) ve Qriocity müzik satış portalının 77 milyon kullanıcısının kişisel verilerine erişerek kopyalamış ve 2011 yılında Sony’nin hizmetlerini çevrimdışı hale getirmiştir.
+
+                Ocak 2013’te şirket, veri sızdırdığı gerekçesiyle Birleşik Krallık’taki Bilgi Komiserliği tarafından 250.000 Sterlin para cezasına çarptırıldı.
+            </h3>
+        </section>
+
+        <section class="tm-flex-center tm-mb-50 tm-bgcolor-4 tm-border-rounded">
+            <i class="fas fa-heart fa-3x"></i>
+            <h1 style="color:black; font-family:Arial, Helvetica, sans-serif, Times, serif">4. Yahoo verı̇ sızıntısı<img style="margin-left:20px;width:130px;height:130px" src="https://antivirus.com.tr/wp-content/uploads/2023/09/Yahoo_data_leak-1024x614.jpg" /></h1>
+            <h3 style="color:black; font-family:Arial, Helvetica, sans-serif, Times, serif; padding-left:30px">
+                2014 yılında 500 milyon Yahoo kullanıcı hesabı büyük bir siber saldırı nedeniyle tehlikeye girmiştir.
+
+                Ancak görünüşe göre kötü niyetli saldırganlar sadece temel bilgilere ve şifrelere erişebilmiş, banka bilgileri çalınmamıştır.
+            </h3>
+        </section>
+
+        <section class="tm-flex-center tm-mb-50 tm-bgcolor-5 tm-border-rounded">
+            <i class="fas fa-heart fa-3x"></i>
+            <h1 style="color:black; font-family:Arial, Helvetica, sans-serif, Times, serif">5. Kaseya’ya siber saldırı<img style="margin-left:20px;width:130px;height:130px" src="https://antivirus.com.tr/wp-content/uploads/2023/09/shutterstock_2008597337.jpg" /></h1>
+            <h3 style="color:black; font-family:Arial, Helvetica, sans-serif, Times, serif; padding-left:30px">
+                Temmuz 2021’de, teknoloji sistemleri yönetim şirketlerine hizmet sunan Kaseya’nın geliştirdiği yazılım olan VSA sunucularında bazı şüpheli faaliyetler gerçekleştirildi. Bunun bir siber saldırı olduğunu fark eden kuruluşun CEO’su, VSA sunucularını kapatarak 1500 civarında şirketi tehlikeye atan eylemin çok daha fazla sayıda müşteriyi etkilemesini engelledi.
+            </h3>
+        </section>
+
+        <section class="tm-flex-center tm-mb-50 tm-bgcolor-6 tm-border-rounded">
+            <i class="fas fa-heart fa-3x"></i>
+            <h1 style="color:black; font-family:Arial, Helvetica, sans-serif, Times, serif">6. Solarwinds’e siber saldırı<img style="margin-left:20px;width:130px;height:130px" src="https://antivirus.com.tr/wp-content/uploads/2023/09/solarwinds_1885971511-1024x683.png" /></h1>
+            <h3 style="color:black; font-family:Arial, Helvetica, sans-serif, Times, serif; padding-left:30px">
+                Aralık 2020’de Rus bilgisayar korsanları SolarWinds altyapı izleme ve yönetim yazılımı çözümünde bulunan güvenlik açıklarından yararlandı. Bu sayede kuruluşun yaklaşık 18 bin müşterisine kötü niyetli güncellemeler gönderdiler.
+
+                Bu sayede saldırganlar müşteri ağlarına erişim sağlayabilir ve diğer saldırıları gerçekleştirebilir, kötü amaçlı yazılım dağıtabilir ve dosyalara erişmek için kullanıcıları taklit edebilir.
+
+                Birçok devlet kurumu ve özel şirket bu durumdan etkilenmiştir.
+            </h3>
+        </section>
+
+        <section class="tm-flex-center tm-mb-50 tm-bgcolor-7 tm-border-rounded">
+            <i class="fas fa-heart fa-3x"></i>
+            <h1 style="color:black; font-family:Arial, Helvetica, sans-serif, Times, serif">7. Microsoft verı̇ sızıntısı<img style="margin-left:20px;width:130px;height:130px" src="https://antivirus.com.tr/wp-content/uploads/2023/09/Microsoft-1024x676.jpg" /></h1>
+            <h3 style="color:black; font-family:Arial, Helvetica, sans-serif, Times, serif; padding-left:30px">
+                Mart 2022’de Lapsus$ adlı bir grup bilgisayar korsanı tarafından saldırıya uğrama sırası Microsoft’a geldi. Siber suçlular Telegram’da siber saldırıyı gösteren bir ekran görüntüsü yayınladılar. Ancak Microsoft, saldırganların eylemini hızla durdurarak kullanıcılarından veri çalınmasını önledi.
+            </h3>
+        </section>
+
+        <section class="tm-flex-center tm-mb-50 tm-bgcolor-8 tm-border-rounded">
+            <i class="fas fa-heart fa-3x"></i>
+            <h1 style="color:black; font-family:Arial, Helvetica, sans-serif, Times, serif">8. Ukrayna elektrik santraline siber saldırı<img style="margin-left:20px;width:130px;height:130px" src="https://antivirus.com.tr/wp-content/uploads/2023/09/ukrainian-power-grid.jpg" /></h1>
+            <h3 style="color:black; font-family:Arial, Helvetica, sans-serif, Times, serif; padding-left:30px">
+                Ukrayna’nın 2015’teki elektrik şebekesi saldırısı, bir elektrik şebekesine yapılan ilk siber saldırıydı. Saldırı sonucunda, Ukrayna’nın İvano-Frankivsk bölgesindeki evlerin yaklaşık yarısı birkaç saatliğine elektriksiz kaldı.
+            </h3>
+        </section>
+
+        <section class="tm-flex-center tm-mb-50 tm-bgcolor-9 tm-border-rounded">
+            <i class="fas fa-heart fa-3x"></i>
+            <h1 style="color:black; font-family:Arial, Helvetica, sans-serif, Times, serif">9. 2017 Wannacry fidye saldırısı<img style="margin-left:20px;width:130px;height:130px" src="https://antivirus.com.tr/wp-content/uploads/2023/09/wannacry_643639099-1024x683.jpg" /></h1>
+            <h3 style="color:black; font-family:Arial, Helvetica, sans-serif, Times, serif; padding-left:30px">
+                Tüm zamanların en büyük fidye yazılımı saldırılarından biri 2017 yılında gerçekleşti. 150’den fazla ülkede yaklaşık 200.000 bilgisayarı etkiledi. Özetlemek gerekirse, fidye yazılımı, çeşitli endüstriler üzerinde yaklaşık 6 milyar sterline mal olan hasara neden oldu.
+            </h3>
+        </section>
+
+        <section class="tm-flex-center tm-mb-50 tm-bgcolor-10 tm-border-rounded">
+            <i class="fas fa-heart fa-3x"></i>
+            <h1 style="color:black; font-family:Arial, Helvetica, sans-serif, Times, serif">10. NotPetya</h1>
+            <h3 style="color:black; font-family:Arial, Helvetica, sans-serif, Times, serif; padding-left:30px">
+                NotPetya fidye yazılımı 12.500’den fazla bilgisayarı etkiledi ve fidye için verileri şifrelemekten daha fazlasına sebep oldu. Saldırı süresince etkilenen bilgisayarlar birbirleri ile iletişim kuramaz duruma düştüler.
+
+                Kargo şirketleri FedEx ve Maersk, Rus petrol ve gaz şirketi Rosneft ve İngiliz reklam şirketi WPP de dahil olmak üzere oldukça fazla sayıda şiirketin verilerini sildi. FedEx, saldırıda 300 milyon dolarlık bir kayıp olduğunu açıkladı. FedEx’in yan kuruluşlarından biri iflasını açıklamak zorunda kaldı.
+            </h3>
+        </section>
+
+        <section class="tm-flex-center tm-mb-50 tm-bgcolor-11 tm-border-rounded">
+            <i class="fas fa-heart fa-3x"></i>
+            <h1 style="color:black; font-family:Arial, Helvetica, sans-serif, Times, serif">11. Marriott otellerine siber saldırı<img style="margin-left:20px;width:130px;height:130px" src="https://antivirus.com.tr/wp-content/uploads/2023/09/shutterstock_2161227319.jpg" /></h1>
+            <h3 style="color:black; font-family:Arial, Helvetica, sans-serif, Times, serif; padding-left:30px">
+                Marriott otellerine ve Starwood oteller grubuna yönelik bir siber saldırı yıllarca tespit edilemedi ve ancak 2018’de ortaya çıktı. Sonunda saldırının farkına vardıklarında, tahmini 339 milyon misafirin verileri sızdırılmıştı. Sonuç olarak, İngiltere’nin veri gizliliği gözlemcisi Marriott Otelleri’ne 18,4 milyon sterlin para cezası verdi.
+        </section>
+
+        <section class="tm-flex-center tm-mb-50 tm-bgcolor-12 tm-border-rounded">
+            <i class="fas fa-heart fa-3x"></i>
+            <h1 style="color:black; font-family:Arial, Helvetica, sans-serif, Times, serif">12. Adobe siber saldırısı<img style="margin-left:20px;width:130px;height:130px" src="https://antivirus.com.tr/wp-content/uploads/2023/09/adobe-breach.jpg" /></h1>
+            <h3 style="color:black; font-family:Arial, Helvetica, sans-serif, Times, serif; padding-left:30px">
+                Adobe siber saldırısının ilk olarak 2,9 milyon kullanıcının verilerini ihlal ettiği düşünülüyordu. Daha sonra 38 milyon kadar kullanıcının kişisel verilerinin sızdırıldığı ortaya çıktı! Adobe, yalnızca ilk 2,9 milyon kullanıcının şifrelerinin ve kredi kartı bilgilerinin ele geçirildiğini, ancak kalan 35,1 milyon kullanıcının sadece şifrelerinin ve kullanıcı kimliklerinin sızdırıldığını iddia ediyor.
+
+
+            </h3>
+        </section>
+
+        <section class="tm-flex-center tm-mb-50 tm-bgcolor-13 tm-border-rounded">
+            <i class="fas fa-heart fa-3x"></i>
+            <h1 style="color:black; font-family:Arial, Helvetica, sans-serif, Times, serif">13. Log4J açığı<img style="margin-left:20px;width:130px;height:130px" src="https://antivirus.com.tr/wp-content/uploads/2023/09/shutterstock_2089585993.jpg" /></h1>
+            <h3 style="color:black; font-family:Arial, Helvetica, sans-serif, Times, serif; padding-left:30px">
+                Bu sıfır gün istismarı, 2021’in sonlarında güvenlik endüstrisini fırtınaya sürükledi ve resmi bir CVE tanımlayıcısı atanmadan önce Log4Shell olarak bilinir hale geldi.
+
+                Bu güvenlik açığı, küçüklerin yanı sıra Amazon Web Services, Apple’ın iCloud’u ve birçok büyük altyapı sağlayıcısını sarstı. Güvenlik açığı o kadar şiddetli ki, FTC bile şirketlere bu güvenlik açığını derhal düzeltmelerini tavsiye eden bir uyarı yayınladı.
+
+                Bu güvenlik açığının kesin etkisi henüz belirlenmemiş olsa da birçok uzman Log4J’nin şirketleri daha uzun yıllar boyunca rahatsız eden bir sorun olacağını öne sürüyor.
+
+
+            </h3>
+        </section>
+
+        <section class="tm-flex-center tm-mb-50 tm-bgcolor-14 tm-border-rounded">
+            <i class="fas fa-heart fa-3x"></i>
+            <h1 style="color:black; font-family:Arial, Helvetica, sans-serif, Times, serif">14. eBay<img style="margin-left:20px;width:130px;height:130px" src="https://antivirus.com.tr/wp-content/uploads/2023/09/ebay.jpg" /></h1>
+            <h3 style="color:black; font-family:Arial, Helvetica, sans-serif, Times, serif; padding-left:30px">
+                Mayıs 2014’te eBay, bilgisayar korsanlarının üç kurumsal çalışanın kimlik bilgilerini kullanarak şirket ağına girdiğini ve 229 gün boyunca içeride tam erişime sahip olduğunu açıkladı. Bu süre zarfında, 145 milyon kullanıcıya ait tüm kişisel bilgileri topladılar.
+
+                Şans eseri finansal bilgiler ayrı bir sunucuda saklandığı için saldırının kapsamı sınırlıydı: tam adlar, ev adresleri, e-posta adresleri, telefon numaraları ve doğum tarihleri ile sınırlı kaldı.
+            </h3>
+        </section>
+
+        <section class="tm-flex-center tm-mb-50 tm-bgcolor-15 tm-border-rounded">
+            <i class="fas fa-heart fa-3x"></i>
+            <h1 style="color:black; font-family:Arial, Helvetica, sans-serif, Times, serif">15. Equifax’a siber saldırı<img style="margin-left:20px;width:130px;height:130px" src="https://antivirus.com.tr/wp-content/uploads/2023/09/Equifax_733211929-2.jpg" /></h1>
+            <h3 style="color:black; font-family:Arial, Helvetica, sans-serif, Times, serif; padding-left:30px">
+                Eylül 2017’de, ABD’deki en büyük kredi kurumlarından biri olan Equifax, Sosyal Güvenlik numaraları, doğum tarihleri, adresler ve bazı ehliyet numaraları gibi kişisel verilerin sızdırıldığını açıkladı.
+
+                2020’de Amerikan Adalet Bakanlığı, dört Çinli askeri bilgisayar korsanını Equifax kredi raporlama kurumunun bilgisayar ağlarına girmekle ve on milyonlarca Amerikalının kişisel bilgilerini çalmakla suçladı.
+            </h3>
+        </section>
+
+        <section class="tm-flex-center tm-mb-50 tm-bgcolor-16 tm-border-rounded">
+            <i class="fas fa-heart fa-3x"></i>
+            <h1 style="color:black; font-family:Arial, Helvetica, sans-serif, Times, serif">16. RockYou2021<img style="margin-left:20px;width:130px;height:130px" src="https://antivirus.com.tr/wp-content/uploads/2023/09/rockyou-1024x448.png" /></h1>
+            <h3 style="color:black; font-family:Arial, Helvetica, sans-serif, Times, serif; padding-left:30px">
+                2021’de uzmanlar, tüm zamanların en büyük şifre sızıntısı gibi görünen olayı araştırmaya başladı. Bir forum kullanıcısı, önceki sızıntılardan ve veri ihlallerinden elde edilen 8,4 milyar parola içeren büyük bir metin dosyası yayınladı. Derleme, 2009 yılında gerçekleşen RockYou veri ihlaline atıfta bulunarak “RockYou2021” olarak adlandırılmıştı. Araştırmacılara göre büyüklüğüne bakılırsa dosya çeşitli hesaplarda kullanılan farklı parolaları içeriyordu.
+
+                RockYou2021 olayı parola güvenliği ve sızıntıların izlenmesine yönelik bir dizi yeni aracın geliştirilmesine yol açtı.
+            </h3>
+        </section>
+
+        <section class="tm-flex-center tm-mb-50 tm-bgcolor-17 tm-border-rounded">
+            <i class="fas fa-heart fa-3x"></i>
+            <h1 style="color:black; font-family:Arial, Helvetica, sans-serif, Times, serif">17. NASA’ya siber saldırı<img style="margin-left:20px;width:130px;height:130px" src="https://antivirus.com.tr/wp-content/uploads/2023/09/NASA.jpg" /></h1>
+            <h3 style="color:black; font-family:Arial, Helvetica, sans-serif, Times, serif; padding-left:30px">
+                1999’da gerçekleşen bir diğer büyük siber güvenlik olayı olan NASA siber saldırısı, NASA’nın kritik bilgisayarlarının ihlaline ve ardından yaklaşık 21 gün boyunca kapalı kalmasına neden oldu. Saldırı sırasında yaklaşık 1,7 milyon yazılım indirildi ve bu da şirketi 41.000 dolar harcamasına neden oldu. Bu saldırıyı bu kadar ünlü yapan şey, paranın büyüklüğü değil, eylemden sorumlu suçluydu.
+
+                Saldırının gerçekleşmesinden kısa bir süre sonra, on beş yaşındaki bir bilgisayar korsanı konuyla ilgili suçunu kabul etti ve altı ay hapis cezasına çarptırıldı. Çocuğun cezasının bir parçası olarak hem NASA yöneticilerine hem de savunma bakanına özür mektupları yazması gerekti.
+            </h3>
+        </section>
+
+        <section class="tm-flex-center tm-mb-50 tm-bgcolor-18 tm-border-rounded">
+            <i class="fas fa-heart fa-3x"></i>
+            <h1 style="color:black; font-family:Arial, Helvetica, sans-serif, Times, serif">18. Facebook / Cambridge Analytica<img style="margin-left:20px;width:130px;height:130px" src="https://antivirus.com.tr/wp-content/uploads/2023/09/Cambridge_Analytica_1079263277.jpg" /></h1>
+            <h3 style="color:black; font-family:Arial, Helvetica, sans-serif, Times, serif; padding-left:30px">
+                2018 yılında, bir İngiliz danışmanlık firması olan Cambridge Analytica Facebook’taki 50-90 milyon kullanıcı hesabından veri çaldı ve sattı. Cambridge Analytica güvenlik araştırmacısı Aleksandr Kogan, bu verilere üçüncü taraf bir sınav uygulamasından bir boşluk aracılığıyla erişti. Facebook API’sindeki bu boşluk, Kogan’ın uygulamayı indiren herkesten ve tüm arkadaş ağından veri derlemesine izin verdi.
+
+                Cambridge Analytica, Facebook’un hüküm ve koşullarına aykırı olmasına rağmen herhangi bir yaptırımı olmaması nedeni ile verileri satmaya devam etti. Raporlar, Facebook’un 2015 gibi erken bir tarihte konunun farkında olduğunu, ancak Cambridge Analytica çalışanı Christopher Wylie’nin olayı açıklamasına kadar harekete geçmediğini gösteriyor.
+            </h3>
+        </section>
+
+        <section class="tm-flex-center tm-mb-50 tm-bgcolor-19 tm-border-rounded">
+            <i class="fas fa-heart fa-3x"></i>
+            <h1 style="color:black; font-family:Arial, Helvetica, sans-serif, Times, serif">19. Plex<img style="margin-left:20px;width:130px;height:130px" src="https://antivirus.com.tr/wp-content/uploads/2023/09/plex.png" /></h1>
+            <h3 style="color:black; font-family:Arial, Helvetica, sans-serif, Times, serif; padding-left:30px">
+                Bir medya stream platformu olan Plex, 24 Ağustos 2022’de yetkisiz bir kişinin e-postalar, kullanıcı adları ve şifreli parolalar içeren verilere eriştiğini fark ettikten sonra neredeyse 30 milyon kullanıcıya şifre sıfırlama bildirimi gönderdi. Parolalar, suçluların hesapları çalma olasılığını önlemek için bir karma algoritma ile şifrelenmişti. Bu veri ihlalinin, suçlunun Plex’in sistemlerine girebilmesine izin veren yamalanmamış bir güvenlik açığından kaynaklandığı ortaya çıktı.
+            </h3>
+        </section>
+
+        <section class="tm-flex-center tm-mb-50 tm-bgcolor-20 tm-border-rounded">
+            <i class="fas fa-heart fa-3x"></i>
+            <h1 style="color:black; font-family:Arial, Helvetica, sans-serif, Times, serif">20. 2021 Microsoft Exchange Server Açığı<img style="margin-left:20px;width:130px;height:130px" src="https://antivirus.com.tr/wp-content/uploads/2023/09/Microsoft_Exchange_Server_2008550885.jpg" /></h1>
+            <h3 style="color:black; font-family:Arial, Helvetica, sans-serif, Times, serif; padding-left:30px">
+                2021 yılının başlarında, birçok kuruluş tarafından kullanılan e-posta sistemi olan Microsoft Exchange, sofistike bir bilgisayar korsanlığı kampanyası tarafından hedef alındı. Saldırı, Çin merkezli devlet destekli bir grup tarafından gerçekleştirildi.
+
+                Microsoft, saldırganların Exchange Server ürünlerini çalıştıran kuruluşları hedeflemek için dört sıfır gün güvenlik açığını beraber kullandığını bildirdi; CVE-2021-26855, CVE-2021-26857, CVE-2021-26858 ve CVE-2021-27065
+
+                Saldırının kapsamı dünya çapında on binlerce işletmenin etkilenmesi nedeni ile önemliydi. Microsoft, etkilenen Exchange sunucuları için acil durum düzeltme ekleri yayımladı, ancak birçok kuruluş bunları uygulamakta yavaş kaldı.
+
+                Saldırı son derece sofistike ve iyi koordine edilmişti ve casusluk amacıyla hassas verileri çalmak için gerçekleştirildiğine inanılıyor.
+            </h3>
+        </section>
+
+        <footer class="tm-footer">
+            Copyright 2024 Eren Taha ÇAĞŞAK - Cyber_Alert: <a rel="sponsored" href="https://github.com/erencagsak?tab=repositories" class="tm-link-gray">GitHub</a>
+        </footer>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,54 @@
+C:\Users\EREN\Desktop\Web Site Proje\Game_Wave\BusinessLayer\bin\Debug\BusinessLayer.dll
+C:\Users\EREN\Desktop\Web Site Proje\Game_Wave\BusinessLayer\bin\Debug\BusinessLayer.pdb
+C:\Users\EREN\Desktop\Web Site Proje\Game_Wave\BusinessLayer\obj\Debug\BusinessLayer.csproj.AssemblyReference.cache
+C:\Users\EREN\Desktop\Web Site Proje\Game_Wave\BusinessLayer\obj\Debug\BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\EREN\Desktop\Web Site Proje\Game_Wave\BusinessLayer\obj\Debug\BusinessLayer.dll
+C:\Users\EREN\Desktop\Web Site Proje\Game_Wave\BusinessLayer\obj\Debug\BusinessLayer.pdb
+C:\Users\EREN\Desktop\Web Site Proje\Game_Wave\BusinessLayer\bin\Debug\BusinessLayer.dll.config
+C:\Users\EREN\Desktop\Web Site Proje\Game_Wave\BusinessLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\EREN\Desktop\Web Site Proje\Game_Wave\BusinessLayer\bin\Debug\EntityFramework.dll
+C:\Users\EREN\Desktop\Web Site Proje\Game_Wave\BusinessLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\EREN\Desktop\Web Site Proje\Game_Wave\BusinessLayer\bin\Debug\EntityLayer.dll
+C:\Users\EREN\Desktop\Web Site Proje\Game_Wave\BusinessLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\EREN\Desktop\Web Site Proje\Game_Wave\BusinessLayer\bin\Debug\DataAccessLayer.dll.config
+C:\Users\EREN\Desktop\Web Site Proje\Game_Wave\BusinessLayer\bin\Debug\EntityLayer.pdb
+C:\Users\EREN\Desktop\Web Site Proje\Game_Wave\BusinessLayer\bin\Debug\EntityLayer.dll.config
+C:\Users\EREN\Desktop\Web Site Proje\Game_Wave\BusinessLayer\bin\Debug\EntityFramework.xml
+C:\Users\EREN\Desktop\Web Site Proje\Game_Wave\BusinessLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\EREN\Desktop\Web Site Proje\Game_Wave\BusinessLayer\obj\Debug\Business.EA331CBA.Up2Date
+C:\Users\EREN\Desktop\Web Site Proje\Game-Wave\BusinessLayer\bin\Debug\BusinessLayer.dll.config
+C:\Users\EREN\Desktop\Web Site Proje\Game-Wave\BusinessLayer\bin\Debug\BusinessLayer.dll
+C:\Users\EREN\Desktop\Web Site Proje\Game-Wave\BusinessLayer\bin\Debug\BusinessLayer.pdb
+C:\Users\EREN\Desktop\Web Site Proje\Game-Wave\BusinessLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\EREN\Desktop\Web Site Proje\Game-Wave\BusinessLayer\bin\Debug\EntityFramework.dll
+C:\Users\EREN\Desktop\Web Site Proje\Game-Wave\BusinessLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\EREN\Desktop\Web Site Proje\Game-Wave\BusinessLayer\bin\Debug\EntityLayer.dll
+C:\Users\EREN\Desktop\Web Site Proje\Game-Wave\BusinessLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\EREN\Desktop\Web Site Proje\Game-Wave\BusinessLayer\bin\Debug\DataAccessLayer.dll.config
+C:\Users\EREN\Desktop\Web Site Proje\Game-Wave\BusinessLayer\bin\Debug\EntityLayer.pdb
+C:\Users\EREN\Desktop\Web Site Proje\Game-Wave\BusinessLayer\bin\Debug\EntityLayer.dll.config
+C:\Users\EREN\Desktop\Web Site Proje\Game-Wave\BusinessLayer\bin\Debug\EntityFramework.xml
+C:\Users\EREN\Desktop\Web Site Proje\Game-Wave\BusinessLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\EREN\Desktop\Web Site Proje\Game-Wave\BusinessLayer\obj\Debug\BusinessLayer.csproj.AssemblyReference.cache
+C:\Users\EREN\Desktop\Web Site Proje\Game-Wave\BusinessLayer\obj\Debug\BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\EREN\Desktop\Web Site Proje\Game-Wave\BusinessLayer\obj\Debug\Business.EA331CBA.Up2Date
+C:\Users\EREN\Desktop\Web Site Proje\Game-Wave\BusinessLayer\obj\Debug\BusinessLayer.dll
+C:\Users\EREN\Desktop\Web Site Proje\Game-Wave\BusinessLayer\obj\Debug\BusinessLayer.pdb
+C:\Users\EREN\Desktop\Ag_Programlama\CyberAlert\BusinessLayer\bin\Debug\BusinessLayer.dll.config
+C:\Users\EREN\Desktop\Ag_Programlama\CyberAlert\BusinessLayer\bin\Debug\BusinessLayer.dll
+C:\Users\EREN\Desktop\Ag_Programlama\CyberAlert\BusinessLayer\bin\Debug\BusinessLayer.pdb
+C:\Users\EREN\Desktop\Ag_Programlama\CyberAlert\BusinessLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\EREN\Desktop\Ag_Programlama\CyberAlert\BusinessLayer\bin\Debug\EntityFramework.dll
+C:\Users\EREN\Desktop\Ag_Programlama\CyberAlert\BusinessLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\EREN\Desktop\Ag_Programlama\CyberAlert\BusinessLayer\bin\Debug\EntityLayer.dll
+C:\Users\EREN\Desktop\Ag_Programlama\CyberAlert\BusinessLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\EREN\Desktop\Ag_Programlama\CyberAlert\BusinessLayer\bin\Debug\DataAccessLayer.dll.config
+C:\Users\EREN\Desktop\Ag_Programlama\CyberAlert\BusinessLayer\bin\Debug\EntityLayer.pdb
+C:\Users\EREN\Desktop\Ag_Programlama\CyberAlert\BusinessLayer\bin\Debug\EntityLayer.dll.config
+C:\Users\EREN\Desktop\Ag_Programlama\CyberAlert\BusinessLayer\bin\Debug\EntityFramework.xml
+C:\Users\EREN\Desktop\Ag_Programlama\CyberAlert\BusinessLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\EREN\Desktop\Ag_Programlama\CyberAlert\BusinessLayer\obj\Debug\BusinessLayer.csproj.AssemblyReference.cache
+C:\Users\EREN\Desktop\Ag_Programlama\CyberAlert\BusinessLayer\obj\Debug\BusinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\EREN\Desktop\Ag_Programlama\CyberAlert\BusinessLayer\obj\Debug\Business.EA331CBA.Up2Date
+C:\Users\EREN\Desktop\Ag_Programlama\CyberAlert\BusinessLayer\obj\Debug\BusinessLayer.dll
+C:\Users\EREN\Desktop\Ag_Programlama\CyberAlert\BusinessLayer\obj\Debug\BusinessLayer.pdb

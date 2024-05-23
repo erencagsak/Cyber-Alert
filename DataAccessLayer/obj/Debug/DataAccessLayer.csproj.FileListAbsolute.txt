@@ -1,0 +1,64 @@
+C:\Users\EREN\Desktop\Web Site Proje\Game_Wave\DataAccessLayer\bin\Debug\DataAccessLayer.dll.config
+C:\Users\EREN\Desktop\Web Site Proje\Game_Wave\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\EREN\Desktop\Web Site Proje\Game_Wave\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\EREN\Desktop\Web Site Proje\Game_Wave\DataAccessLayer\bin\Debug\EntityFramework.dll
+C:\Users\EREN\Desktop\Web Site Proje\Game_Wave\DataAccessLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\EREN\Desktop\Web Site Proje\Game_Wave\DataAccessLayer\bin\Debug\EntityLayer.dll
+C:\Users\EREN\Desktop\Web Site Proje\Game_Wave\DataAccessLayer\bin\Debug\EntityLayer.pdb
+C:\Users\EREN\Desktop\Web Site Proje\Game_Wave\DataAccessLayer\bin\Debug\EntityLayer.dll.config
+C:\Users\EREN\Desktop\Web Site Proje\Game_Wave\DataAccessLayer\bin\Debug\EntityFramework.xml
+C:\Users\EREN\Desktop\Web Site Proje\Game_Wave\DataAccessLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\EREN\Desktop\Web Site Proje\Game_Wave\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\EREN\Desktop\Web Site Proje\Game_Wave\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\EREN\Desktop\Web Site Proje\Game_Wave\DataAccessLayer\obj\Debug\DataAcce.E67BD773.Up2Date
+C:\Users\EREN\Desktop\Web Site Proje\Game_Wave\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+C:\Users\EREN\Desktop\Web Site Proje\Game_Wave\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+C:\Users\EREN\Desktop\Web Site Proje\Game_Wave\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.DataAccesLayer.resources
+C:\Users\EREN\Desktop\Web Site Proje\Game_Wave\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.GenerateResource.cache
+C:\Users\EREN\Desktop\Web Site Proje\Game-Wave\DataAccessLayer\bin\Debug\DataAccessLayer.dll.config
+C:\Users\EREN\Desktop\Web Site Proje\Game-Wave\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\EREN\Desktop\Web Site Proje\Game-Wave\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\EREN\Desktop\Web Site Proje\Game-Wave\DataAccessLayer\bin\Debug\EntityFramework.dll
+C:\Users\EREN\Desktop\Web Site Proje\Game-Wave\DataAccessLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\EREN\Desktop\Web Site Proje\Game-Wave\DataAccessLayer\bin\Debug\EntityLayer.dll
+C:\Users\EREN\Desktop\Web Site Proje\Game-Wave\DataAccessLayer\bin\Debug\EntityLayer.pdb
+C:\Users\EREN\Desktop\Web Site Proje\Game-Wave\DataAccessLayer\bin\Debug\EntityLayer.dll.config
+C:\Users\EREN\Desktop\Web Site Proje\Game-Wave\DataAccessLayer\bin\Debug\EntityFramework.xml
+C:\Users\EREN\Desktop\Web Site Proje\Game-Wave\DataAccessLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\EREN\Desktop\Web Site Proje\Game-Wave\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\EREN\Desktop\Web Site Proje\Game-Wave\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\EREN\Desktop\Web Site Proje\Game-Wave\DataAccessLayer\obj\Debug\DataAcce.E67BD773.Up2Date
+C:\Users\EREN\Desktop\Web Site Proje\Game-Wave\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+C:\Users\EREN\Desktop\Web Site Proje\Game-Wave\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+C:\Users\EREN\Desktop\Web Site Proje\Game-Wave\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.Delete.resources
+C:\Users\EREN\Desktop\Web Site Proje\Game-Wave\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.GenerateResource.cache
+C:\Users\EREN\Desktop\Web Site Proje\Game-Wave\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.Update.resources
+C:\Users\EREN\Desktop\Web Site Proje\Game-Wave\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.Add.resources
+C:\Users\EREN\Desktop\Web Site Proje\Game-Wave\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.Add2.resources
+C:\Users\EREN\Desktop\Web Site Proje\Game-Wave\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.Add3.resources
+C:\Users\EREN\Desktop\Web Site Proje\Game-Wave\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.Update1.resources
+C:\Users\EREN\Desktop\Web Site Proje\Game-Wave\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.Update2.resources
+C:\Users\EREN\Desktop\Web Site Proje\Game-Wave\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.UpdateEt.resources
+C:\Users\EREN\Desktop\Web Site Proje\Game-Wave\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.deneme.resources
+C:\Users\EREN\Desktop\Web Site Proje\Game-Wave\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.d.resources
+C:\Users\EREN\Desktop\Web Site Proje\Game-Wave\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.cart.resources
+C:\Users\EREN\Desktop\Ag_Programlama\CyberAlert\DataAccessLayer\bin\Debug\DataAccessLayer.dll.config
+C:\Users\EREN\Desktop\Ag_Programlama\CyberAlert\DataAccessLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\EREN\Desktop\Ag_Programlama\CyberAlert\DataAccessLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\EREN\Desktop\Ag_Programlama\CyberAlert\DataAccessLayer\bin\Debug\EntityFramework.dll
+C:\Users\EREN\Desktop\Ag_Programlama\CyberAlert\DataAccessLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\EREN\Desktop\Ag_Programlama\CyberAlert\DataAccessLayer\bin\Debug\EntityLayer.dll
+C:\Users\EREN\Desktop\Ag_Programlama\CyberAlert\DataAccessLayer\bin\Debug\EntityLayer.pdb
+C:\Users\EREN\Desktop\Ag_Programlama\CyberAlert\DataAccessLayer\bin\Debug\EntityLayer.dll.config
+C:\Users\EREN\Desktop\Ag_Programlama\CyberAlert\DataAccessLayer\bin\Debug\EntityFramework.xml
+C:\Users\EREN\Desktop\Ag_Programlama\CyberAlert\DataAccessLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\EREN\Desktop\Ag_Programlama\CyberAlert\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.AssemblyReference.cache
+C:\Users\EREN\Desktop\Ag_Programlama\CyberAlert\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.CoreCompileInputs.cache
+C:\Users\EREN\Desktop\Ag_Programlama\CyberAlert\DataAccessLayer\obj\Debug\DataAcce.E67BD773.Up2Date
+C:\Users\EREN\Desktop\Ag_Programlama\CyberAlert\DataAccessLayer\obj\Debug\DataAccessLayer.dll
+C:\Users\EREN\Desktop\Ag_Programlama\CyberAlert\DataAccessLayer\obj\Debug\DataAccessLayer.pdb
+C:\Users\EREN\Desktop\Ag_Programlama\CyberAlert\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.updateDatabase.resources
+C:\Users\EREN\Desktop\Ag_Programlama\CyberAlert\DataAccessLayer\obj\Debug\DataAccessLayer.csproj.GenerateResource.cache
+C:\Users\EREN\Desktop\Ag_Programlama\CyberAlert\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.newData.resources
+C:\Users\EREN\Desktop\Ag_Programlama\CyberAlert\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.updateDB.resources
+C:\Users\EREN\Desktop\Ag_Programlama\CyberAlert\DataAccessLayer\obj\Debug\DataAccessLayer.Migrations.updateddb.resources
