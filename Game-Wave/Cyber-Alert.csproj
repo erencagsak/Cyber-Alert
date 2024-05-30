@@ -611,8 +611,18 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Web.config" />
+    <Content Include="World_Map\3d_map.html" />
+    <Content Include="World_Map\3d_world_map.html" />
+    <Content Include="World_Map\3d_main_map.html" />
+    <Content Include="World_Map\Amerika\orta.html" />
+    <Content Include="World_Map\Amerika\2015.html" />
+    <Content Include="World_Map\Amerika\stars.jpg" />
     <Content Include="World_Map\cizgi_.gif" />
     <Content Include="World_Map\world-map.png" />
+    <Content Include="World_Map\Worlds\2015_date.html" />
+    <Content Include="World_Map\Worlds\2016.html" />
+    <Content Include="World_Map\Worlds\2014.html" />
+    <Content Include="World_Map\Worlds\2016_date.html" />
     <Content Include="World_Map\world_map.css" />
     <Content Include="World_Map\world_map.html" />
   </ItemGroup>
@@ -716,12 +726,14 @@
     <Content Include="Views\CyberAttacks\Index.cshtml" />
     <Content Include="Views\ImportantWars\Index.cshtml" />
     <Content Include="Views\WorldMap\countryDetails.cshtml" />
+    <Content Include="Views\WorldMap\threeDMap.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="World_Map\Amerika\FileName.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

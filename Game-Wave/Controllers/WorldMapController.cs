@@ -34,5 +34,10 @@ namespace Game_Wave.Controllers
 
             return View(user);
         }
+
+        public ActionResult threeDMap() 
+        {
+            return View();
+        }
     }
 }

@@ -1,0 +1,196 @@
+﻿<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <style>
+        html,
+        body,
+        #viewDiv {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://js.arcgis.com/4.29/esri/themes/light/main.css" />
+    <script src="https://js.arcgis.com/4.29/"></script>
+
+
+</head>
+
+<body>
+    <script>
+        function drawAnimation() {
+            let animationRunning = false; // Animasyon durumunu izlemek için bir değişken
+
+            require([
+                "esri/Map",
+                "esri/views/SceneView",
+                "esri/Graphic",
+                "esri/geometry/Point",
+                "esri/geometry/Polyline",
+                "esri/symbols/SimpleMarkerSymbol",
+                "esri/symbols/SimpleLineSymbol"
+            ], (Map, SceneView, Graphic, Point, Polyline, SimpleMarkerSymbol, SimpleLineSymbol) => {
+                const map = new Map({
+                    basemap: "topo-3d",
+                    ground: "world-elevation"
+                });
+
+                const view = new SceneView({
+                    container: "viewDiv",
+                    map: map,
+                    camera: {
+                        position: {
+                            spatialReference: {
+                                latestWkid: 3857,
+                                wkid: 102100
+                            },
+                            x: -11262192.883555487,
+                            y: 2315246.351026253,
+                            z: 18161244.728082635
+                        },
+                        heading: 0,
+                        tilt: 0.49
+                    }
+                });
+
+                // Marker için sembol tanımlama
+                const markerSymbol = new SimpleMarkerSymbol({
+                    color: "blue",
+                    size: "10px", // çap
+                    style: "circle"
+                });
+
+                // Noktaların eklenmesi
+                const points = [
+                    { x: -100, y: 40, z: 10000 }, // Amerika
+                    { x: -106, y: 56, z: 10000 }, // Kanada
+                    { x: -102, y: 23, z: 10000 }, // Meksika
+                    { x: 35, y: 39, z: 10000 }, // Türkiye
+                    { x: -42, y: 72, z: 10000 }, // Grönland
+                    { x: -19, y: 64, z: 10000 }, // İzlanda
+                    { x: -51, y: -14, z: 10000 }, // Brezilya
+                    { x: 2, y: 28, z: 10000 }, // Cezayir
+                    { x: -7, y: 31, z: 10000 }, // Fas
+                    { x: -3, y: 40, z: 10000 }, // İspanya
+                    { x: 2, y: 46, z: 10000 }, // Fransa
+                    { x: -1, y: 52, z: 10000 }, // İngiltere
+                    { x: 12, y: 42, z: 10000 }, // İtalya
+                    { x: 10, y: 51, z: 10000 }, // Almanya
+                    { x: 19, y: 52, z: 10000 }, // Polonya
+                    { x: 18, y: 60, z: 10000 }, // İsveç
+                    { x: 25, y: 61, z: 10000 }, // Finlandiya
+                    { x: 105, y: 56, z: 10000 }, // Rusya
+                    { x: 31, y: 49, z: 10000 }, // Ukrayna
+                    { x: 25, y: 46, z: 10000 }, // Romanya
+                    { x: 22, y: 39, z: 10000 }, // Yunanistan
+                    { x: 53, y: 32, z: 10000 }, // İran
+                    { x: 66, y: 34, z: 10000 }, // Afganistan
+                    { x: 67, y: 48, z: 10000 }, // Kazakistan
+                    { x: 104, y: 35, z: 10000 }, // Çin
+                    { x: 78, y: 21, z: 10000 }, // Hindistan
+                    { x: 127, y: 40, z: 10000 }, // Kuzey Kore
+                    { x: 127.5, y: 37, z: 10000 }, // Güney Kore
+                    { x: 138, y: 36, z: 10000 }, // Japonya
+                    { x: 133, y: -25, z: 10000 }, // Avustralya
+                    { x: 10, y: 61, z: 10000 }, // Norveç
+                    { x: 30, y: 26, z: 10000 }, // Mısır
+                    { x: 35, y: 31, z: 10000 }, // İsrail
+                    { x: 44, y: 33, z: 10000 }, // Irak
+                    { x: 24, y: -29, z: 10000 }, // Güney Afrika
+                    { x: 45, y: 24, z: 10000 }, // Suudi Arabistan
+                ];
+
+                points.forEach(pt => {
+                    const point = new Point({
+                        longitude: pt.x,
+                        latitude: pt.y,
+                        z: pt.z
+                    });
+
+                    const pointGraphic = new Graphic({
+                        geometry: point,
+                        symbol: markerSymbol
+                    });
+
+                    view.graphics.add(pointGraphic);
+                });
+
+                // İki nokta arasında doğru oluşturma
+                const line = new Polyline({
+                    paths: [
+                        [[-100, 40], [35, 39]] // Amerika'dan Meksika'ya
+                    ],
+                    spatialReference: { wkid: 4326 } // Dünya coğrafi koordinat sistemi
+                });
+
+                // Çizgi sembolü tanımlama
+                const lineSymbol = new SimpleLineSymbol({
+                    color: [0, 255, 0], // Yeşil renk
+                    width: 2 // Çizgi kalınlığı
+                });
+
+                function startAnimation() {
+                    // Adım sayısı
+                    const numSteps = 100; // Daha yumuşak bir animasyon için adım sayısını artırabilirsiniz
+
+                    // Çizgi adımlarını hesaplama
+                    const lineSteps = [];
+                    for (let i = 0; i <= numSteps; i++) {
+                        const startCoords = line.paths[0][0];
+                        const endCoords = line.paths[0][1];
+                        const stepCoords = [
+                            startCoords[0] + (endCoords[0] - startCoords[0]) * (i / numSteps),
+                            startCoords[1] + (endCoords[1] - startCoords[1]) * (i / numSteps)
+                        ];
+                        lineSteps.push(stepCoords);
+                    }
+
+                    // Çizgi adımlarını animasyonlu olarak haritaya ekleme
+                    let stepIndex = 0;
+                    const animateLine = setInterval(() => {
+                        if (stepIndex < numSteps) {
+                            const animatedLine = new Polyline({
+                                paths: [
+                                    [lineSteps[stepIndex], lineSteps[stepIndex + 1]]
+                                ],
+                                spatialReference: { wkid: 4326 }
+                            });
+
+                            const animatedLineGraphic = new Graphic({
+                                geometry: animatedLine,
+                                symbol: lineSymbol
+                            });
+
+                            view.graphics.add(animatedLineGraphic);
+                            stepIndex++;
+                        } else {
+                            clearInterval(animateLine);
+                            animationRunning = false; // Animasyon bittiğinde değişkeni false yapma
+                        }
+                    }, 50); // Her adım arası süre (milisaniye cinsinden)
+                }
+
+                // Animasyonu başlatma
+                startAnimation();
+
+                // Animasyon bitiminde fonksiyonu tekrar çağırarak animasyonun tekrar başlamasını sağlama
+                view.when(() => {
+                    view.watch("updating", (val) => {
+                        if (!val && !animationRunning) {
+                            startAnimation();
+                        }
+                    });
+                });
+
+            });
+        }
+
+        // Sayfa yüklendiğinde animasyonu başlatma
+        document.addEventListener("DOMContentLoaded", drawAnimation);
+    </script>
+    <div id="viewDiv"></div>
+</body>
+</html>
