@@ -1,4 +1,5 @@
-﻿<html lang="en">
+﻿<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
@@ -21,7 +22,7 @@
 <body>
     <script>
         function drawAnimation() {
-            let animationRunning = false; // Animasyon durumunu izlemek için bir değişken
+            let animationRunning = false;
 
             require([
                 "esri/Map",
@@ -32,449 +33,1017 @@
                 "esri/symbols/SimpleMarkerSymbol",
                 "esri/symbols/SimpleLineSymbol"
             ], (Map, SceneView, Graphic, Point, Polyline, SimpleMarkerSymbol, SimpleLineSymbol) => {
-                const map = new Map
-                    ({
-                        basemap: "topo-3d",
-                        ground: "world-elevation"
-                    });
+                const map = new Map({
+                    basemap: "topo-3d",
+                    ground: "world-elevation"
+                });
 
-                const view = new SceneView
-                    ({
-                        container: "viewDiv",
-                        map: map,
-                        camera: {
-                            position:
-                            {
-                                spatialReference:
-                                {
-                                    latestWkid: 3857,
-                                    wkid: 102100
-                                },
-                                x: -11262192.883555487,
-                                y: 2315246.351026253,
-                                z: 18161244.728082635
+                const view = new SceneView({
+                    container: "viewDiv",
+                    map: map,
+                    camera: {
+                        position: {
+                            spatialReference: {
+                                latestWkid: 3857,
+                                wkid: 102100
                             },
-                            heading: 0,
-                            tilt: 0.49
-                        }
-                    });
-
-                // Marker için sembol tanımlama
-                const markerSymbol = new SimpleMarkerSymbol({
-                    color: "blue",
-                    size: "10px",
-                    style: "circle"
+                            x: -11262192.883555487,
+                            y: 2315246.351026253,
+                            z: 18161244.728082635
+                        },
+                        heading: 0,
+                        tilt: 0.49
+                    }
                 });
 
-                // Noktaların eklenmesi
-                const points =
-                    [
-                        { x: -100, y: 40, z: 10000 }, // Amerika
-                        { x: -106, y: 56, z: 10000 }, // Kanada
-                        { x: 35, y: 39, z: 10000 }, // Türkiye
-                        { x: -102, y: 23, z: 10000 }, // Meksika
-                        { x: -42, y: 72, z: 10000 }, // Grönland
-                        { x: -19, y: 64, z: 10000 }, // İzlanda
-                        { x: -51, y: -14, z: 10000 }, // Brezilya
-                        { x: 2, y: 28, z: 10000 }, // Cezayir
-                        { x: -7, y: 31, z: 10000 }, // Fas
-                        { x: -3, y: 40, z: 10000 }, // İspanya
-                        { x: 2, y: 46, z: 10000 }, // Fransa
-                        { x: -1, y: 52, z: 10000 }, // İngiltere
-                        { x: 12, y: 42, z: 10000 }, // İtalya
-                        { x: 10, y: 51, z: 10000 }, // Almanya
-                        { x: 19, y: 52, z: 10000 }, // Polonya
-                        { x: 18, y: 60, z: 10000 }, // İsveç
-                        { x: 25, y: 61, z: 10000 }, // Finlandiya
-                        { x: 105, y: 56, z: 10000 }, // Rusya
-                        { x: 31, y: 49, z: 10000 }, // Ukrayna
-                        { x: 25, y: 46, z: 10000 }, // Romanya
-                        { x: 22, y: 39, z: 10000 }, // Yunanistan
-                        { x: 53, y: 32, z: 10000 }, // İran
-                        { x: 66, y: 34, z: 10000 }, // Afganistan
-                        { x: 67, y: 48, z: 10000 }, // Kazakistan
-                        { x: 104, y: 35, z: 10000 }, // Çin
-                        { x: 78, y: 21, z: 10000 }, // Hindistan
-                        { x: 127, y: 40, z: 10000 }, // Kuzey Kore
-                        { x: 127.5, y: 37, z: 10000 }, // Güney Kore
-                        { x: 138, y: 36, z: 10000 }, // Japonya
-                        { x: 133, y: -25, z: 10000 }, // Avustralya
-                        { x: 10, y: 61, z: 10000 }, // Norveç
-                        { x: 30, y: 26, z: 10000 }, // Mısır
-                        { x: 35, y: 31, z: 10000 }, // İsrail
-                        { x: 44, y: 33, z: 10000 }, // Irak
-                        { x: 24, y: -29, z: 10000 }, // Güney Afrika
-                        { x: 45, y: 24, z: 10000 }, // Suudi Arabistan
-                    ];
-
-                points.forEach(pt => {
-                    const point = new Point
-                        ({
-                            longitude: pt.x,
-                            latitude: pt.y,
-                            z: pt.z
-                        });
-
-                    const pointGraphic = new Graphic
-                        ({
-                            geometry: point,
-                            symbol: markerSymbol
-                        });
-
-                    view.graphics.add(pointGraphic);
+                // Türkiye konumunu belirginleştirme
+                const turkeyLocation = new Point({
+                    longitude: 35,
+                    latitude: 39,
+                    spatialReference: { wkid: 4326 }
                 });
+
+                const kanadaLocation = new Point({
+                    longitude: -106,
+                    latitude: 56,
+                    spatialReference: { wkid: 4326 }
+                });
+
+                const amerikaLocation = new Point({
+                    longitude: -100,
+                    latitude: 40,
+                    spatialReference: { wkid: 4326 }
+                });
+
+                const meksikaLocation = new Point({
+                    longitude: -102,
+                    latitude: 23,
+                    spatialReference: { wkid: 4326 }
+                });
+
+                const gronlandLocation = new Point({
+                    longitude: -42,
+                    latitude: 72,
+                    spatialReference: { wkid: 4326 }
+                });
+
+                const izlandaLocation = new Point({
+                    longitude: -19,
+                    latitude: 64,
+                    spatialReference: { wkid: 4326 }
+                });
+
+                const brezilyaLocation = new Point({
+                    longitude: -51,
+                    latitude: -14,
+                    spatialReference: { wkid: 4326 }
+                });
+
+                const cezayirLocation = new Point({
+                    longitude: 2,
+                    latitude: 28,
+                    spatialReference: { wkid: 4326 }
+                });
+
+                const fasLocation = new Point({
+                    longitude: -7,
+                    latitude: 31,
+                    spatialReference: { wkid: 4326 }
+                });
+
+                const ispanyaLocation = new Point({
+                    longitude: -3,
+                    latitude: 40,
+                    spatialReference: { wkid: 4326 }
+                });
+
+                const fransaLocation = new Point({
+                    longitude: 2,
+                    latitude: 46,
+                    spatialReference: { wkid: 4326 }
+                });
+
+                const ingiltereLocation = new Point({
+                    longitude: -1,
+                    latitude: 52,
+                    spatialReference: { wkid: 4326 }
+                });
+
+                const italyaLocation = new Point({
+                    longitude: 12,
+                    latitude: 42,
+                    spatialReference: { wkid: 4326 }
+                });
+
+                const almanyaLocation = new Point({
+                    longitude: 10,
+                    latitude: 51,
+                    spatialReference: { wkid: 4326 }
+                });
+
+                const polonyaLocation = new Point({
+                    longitude: 19,
+                    latitude: 52,
+                    spatialReference: { wkid: 4326 }
+                });
+
+                const isvecLocation = new Point({
+                    longitude: 18,
+                    latitude: 60,
+                    spatialReference: { wkid: 4326 }
+                });
+
+                const finlandiyaLocation = new Point({
+                    longitude: 25,
+                    latitude: 61,
+                    spatialReference: { wkid: 4326 }
+                });
+
+                const rusyaLocation = new Point({
+                    longitude: 105,
+                    latitude: 56,
+                    spatialReference: { wkid: 4326 }
+                });
+
+                const ukraynaLocation = new Point({
+                    longitude: 31,
+                    latitude: 49,
+                    spatialReference: { wkid: 4326 }
+                });
+
+                const romanyaLocation = new Point({
+                    longitude: 25,
+                    latitude: 46,
+                    spatialReference: { wkid: 4326 }
+                });
+
+                const yunanistanLocation = new Point({
+                    longitude: 22,
+                    latitude: 39,
+                    spatialReference: { wkid: 4326 }
+                });
+
+                const iranLocation = new Point({
+                    longitude: 53,
+                    latitude: 32,
+                    spatialReference: { wkid: 4326 }
+                });
+
+                const afganistanLocation = new Point({
+                    longitude: 66,
+                    latitude: 34,
+                    spatialReference: { wkid: 4326 }
+                });
+
+                const kazakistanLocation = new Point({
+                    longitude: 35,
+                    latitude: 39,
+                    spatialReference: { wkid: 4326 }
+                });
+
+                const cinLocation = new Point({
+                    longitude: 104,
+                    latitude: 35,
+                    spatialReference: { wkid: 4326 }
+                });
+
+                const hindistanLocation = new Point({
+                    longitude: 78,
+                    latitude: 21,
+                    spatialReference: { wkid: 4326 }
+                });
+
+                const kuzeykoreLocation = new Point({
+                    longitude: 127,
+                    latitude: 40,
+                    spatialReference: { wkid: 4326 }
+                });
+
+                const guneykoreLocation = new Point({
+                    longitude: 127.5,
+                    latitude: 37,
+                    spatialReference: { wkid: 4326 }
+                });
+
+                const japonyaLocation = new Point({
+                    longitude: 138,
+                    latitude: 36,
+                    spatialReference: { wkid: 4326 }
+                });
+
+                const avustralyaLocation = new Point({
+                    longitude: 133,
+                    latitude: -25,
+                    spatialReference: { wkid: 4326 }
+                });
+
+                const norvecLocation = new Point({
+                    longitude: 10,
+                    latitude: 61,
+                    spatialReference: { wkid: 4326 }
+                });
+
+                const misirLocation = new Point({
+                    longitude: 30,
+                    latitude: 26,
+                    spatialReference: { wkid: 4326 }
+                });
+
+                const israilLocation = new Point({
+                    longitude: 35,
+                    latitude: 31,
+                    spatialReference: { wkid: 4326 }
+                });
+
+                const irakLocation = new Point({
+                    longitude: 44,
+                    latitude: 33,
+                    spatialReference: { wkid: 4326 }
+                });
+
+                const guneyafrikaLocation = new Point({
+                    longitude: 24,
+                    latitude: -29,
+                    spatialReference: { wkid: 4326 }
+                });
+
+                const suudiarabistanLocation = new Point({
+                    longitude: 45,
+                    latitude: 24,
+                    spatialReference: { wkid: 4326 }
+                });
+
+                const redpoint = new SimpleMarkerSymbol({
+                    color: [255, 0, 0], // Kırmızı renk
+                    size: 10,
+                    style: "circle" // Üçgen şekil
+                });
+
+                const bluepoint = new SimpleMarkerSymbol({
+                    color: [0, 0, 255], // Mavi renk
+                    size: 10,
+                    style: "circle" // Üçgen şekil
+                });
+
+                const turkeyGraphic = new Graphic({
+                    geometry: turkeyLocation,
+                    symbol: redpoint,
+                    attributes: {
+                        title: "Türkiye <br> ࠰ Cumhurbaşkanı : Recep Tayyip Erdoğan <br> ࠰ Nüfus : 84.98 milyon <br> ࠰ Kuruluş Tarihi : 29 Ekim 1923"
+                    },
+                    popupTemplate: {
+                        title: "{title}"
+                    }
+                });
+
+                const kanadaGraphic = new Graphic({
+                    geometry: kanadaLocation,
+                    symbol: bluepoint,
+                    attributes: {
+                        title: "Kanada"
+                    },
+                    popupTemplate: {
+                        title: "{title}"
+                    }
+                });
+
+                const amerikaGraphic = new Graphic({
+                    geometry: amerikaLocation,
+                    symbol: bluepoint,
+                    attributes: {
+                        title: "Amerika"
+                    },
+                    popupTemplate: {
+                        title: "{title}"
+                    }
+                });
+
+                const meksikaGraphic = new Graphic({
+                    geometry: meksikaLocation,
+                    symbol: bluepoint,
+                    attributes: {
+                        title: "Meksika"
+                    },
+                    popupTemplate: {
+                        title: "{title}"
+                    }
+                });
+
+                const gronlandGraphic = new Graphic({
+                    geometry: gronlandLocation,
+                    symbol: bluepoint,
+                    attributes: {
+                        title: "Grönland"
+                    },
+                    popupTemplate: {
+                        title: "{title}"
+                    }
+                });
+
+                const izlandaGraphic = new Graphic({
+                    geometry: izlandaLocation,
+                    symbol: bluepoint,
+                    attributes: {
+                        title: "İzlanda"
+                    },
+                    popupTemplate: {
+                        title: "{title}"
+                    }
+                });
+
+                const brezilyaGraphic = new Graphic({
+                    geometry: brezilyaLocation,
+                    symbol: bluepoint,
+                    attributes: {
+                        title: "Brezilya"
+                    },
+                    popupTemplate: {
+                        title: "{title}"
+                    }
+                });
+
+                const cezayirGraphic = new Graphic({
+                    geometry: cezayirLocation,
+                    symbol: bluepoint,
+                    attributes: {
+                        title: "Cezayir"
+                    },
+                    popupTemplate: {
+                        title: "{title}"
+                    }
+                });
+
+                const fasGraphic = new Graphic({
+                    geometry: fasLocation,
+                    symbol: bluepoint,
+                    attributes: {
+                        title: "Fas"
+                    },
+                    popupTemplate: {
+                        title: "{title}"
+                    }
+                });
+
+                const ispanyaGraphic = new Graphic({
+                    geometry: ispanyaLocation,
+                    symbol: bluepoint,
+                    attributes: {
+                        title: "İspanya"
+                    },
+                    popupTemplate: {
+                        title: "{title}"
+                    }
+                });
+
+                const fransaGraphic = new Graphic({
+                    geometry: fransaLocation,
+                    symbol: bluepoint,
+                    attributes: {
+                        title: "Fransa"
+                    },
+                    popupTemplate: {
+                        title: "{title}"
+                    }
+                });
+
+                const ingiltereGraphic = new Graphic({
+                    geometry: ingiltereLocation,
+                    symbol: bluepoint,
+                    attributes: {
+                        title: "İngiltere"
+                    },
+                    popupTemplate: {
+                        title: "{title}"
+                    }
+                });
+
+                const italyaGraphic = new Graphic({
+                    geometry: italyaLocation,
+                    symbol: bluepoint,
+                    attributes: {
+                        title: "İtalya"
+                    },
+                    popupTemplate: {
+                        title: "{title}"
+                    }
+                });
+
+                const almanyaGraphic = new Graphic({
+                    geometry: almanyaLocation,
+                    symbol: bluepoint,
+                    attributes: {
+                        title: "Almanya"
+                    },
+                    popupTemplate: {
+                        title: "{title}"
+                    }
+                });
+
+                const polonyaGraphic = new Graphic({
+                    geometry: polonyaLocation,
+                    symbol: bluepoint,
+                    attributes: {
+                        title: "Polonya"
+                    },
+                    popupTemplate: {
+                        title: "{title}"
+                    }
+                });
+
+                const isvecGraphic = new Graphic({
+                    geometry: isvecLocation,
+                    symbol: bluepoint,
+                    attributes: {
+                        title: "İsveç"
+                    },
+                    popupTemplate: {
+                        title: "{title}"
+                    }
+                });
+
+                const finlandiyaGraphic = new Graphic({
+                    geometry: finlandiyaLocation,
+                    symbol: bluepoint,
+                    attributes: {
+                        title: "Finlandiya"
+                    },
+                    popupTemplate: {
+                        title: "{title}"
+                    }
+                });
+
+                const rusyaGraphic = new Graphic({
+                    geometry: rusyaLocation,
+                    symbol: bluepoint,
+                    attributes: {
+                        title: "Rusya"
+                    },
+                    popupTemplate: {
+                        title: "{title}"
+                    }
+                });
+
+                const ukraynaGraphic = new Graphic({
+                    geometry: ukraynaLocation,
+                    symbol: bluepoint,
+                    attributes: {
+                        title: "Ukrayna"
+                    },
+                    popupTemplate: {
+                        title: "{title}"
+                    }
+                });
+
+                const romanyaGraphic = new Graphic({
+                    geometry: romanyaLocation,
+                    symbol: bluepoint,
+                    attributes: {
+                        title: "Romanya"
+                    },
+                    popupTemplate: {
+                        title: "{title}"
+                    }
+                });
+
+                const yunanistanGraphic = new Graphic({
+                    geometry: yunanistanLocation,
+                    symbol: bluepoint,
+                    attributes: {
+                        title: "Yunanistan"
+                    },
+                    popupTemplate: {
+                        title: "{title}"
+                    }
+                });
+
+                const iranGraphic = new Graphic({
+                    geometry: iranLocation,
+                    symbol: bluepoint,
+                    attributes: {
+                        title: "İran"
+                    },
+                    popupTemplate: {
+                        title: "{title}"
+                    }
+                });
+
+                const afganistanGraphic = new Graphic({
+                    geometry: afganistanLocation,
+                    symbol: bluepoint,
+                    attributes: {
+                        title: "Afganistan"
+                    },
+                    popupTemplate: {
+                        title: "{title}"
+                    }
+                });
+
+                const kazakistanGraphic = new Graphic({
+                    geometry: kazakistanLocation,
+                    symbol: bluepoint,
+                    attributes: {
+                        title: "Kazakistan"
+                    },
+                    popupTemplate: {
+                        title: "{title}"
+                    }
+                });
+
+                const cinGraphic = new Graphic({
+                    geometry: cinLocation,
+                    symbol: bluepoint,
+                    attributes: {
+                        title: "Çin"
+                    },
+                    popupTemplate: {
+                        title: "{title}"
+                    }
+                });
+
+                const hindistanGraphic = new Graphic({
+                    geometry: hindistanLocation,
+                    symbol: bluepoint,
+                    attributes: {
+                        title: "Hindistan"
+                    },
+                    popupTemplate: {
+                        title: "{title}"
+                    }
+                });
+
+                const kuzeykoreGraphic = new Graphic({
+                    geometry: kuzeykoreLocation,
+                    symbol: bluepoint,
+                    attributes: {
+                        title: "Kuzey Kore"
+                    },
+                    popupTemplate: {
+                        title: "{title}"
+                    }
+                });
+
+                const guneykoreGraphic = new Graphic({
+                    geometry: guneykoreLocation,
+                    symbol: bluepoint,
+                    attributes: {
+                        title: "Güney Kore"
+                    },
+                    popupTemplate: {
+                        title: "{title}"
+                    }
+                });
+
+                const japonyaGraphic = new Graphic({
+                    geometry: japonyaLocation,
+                    symbol: bluepoint,
+                    attributes: {
+                        title: "Japonya"
+                    },
+                    popupTemplate: {
+                        title: "{title}"
+                    }
+                });
+
+                const avustralyaGraphic = new Graphic({
+                    geometry: avustralyaLocation,
+                    symbol: bluepoint,
+                    attributes: {
+                        title: "Avustralya"
+                    },
+                    popupTemplate: {
+                        title: "{title}"
+                    }
+                });
+
+                const norvecGraphic = new Graphic({
+                    geometry: norvecLocation,
+                    symbol: bluepoint,
+                    attributes: {
+                        title: "Norveç"
+                    },
+                    popupTemplate: {
+                        title: "{title}"
+                    }
+                });
+
+                const misirGraphic = new Graphic({
+                    geometry: misirLocation,
+                    symbol: bluepoint,
+                    attributes: {
+                        title: "Mısır"
+                    },
+                    popupTemplate: {
+                        title: "{title}"
+                    }
+                });
+
+                const israilGraphic = new Graphic({
+                    geometry: israilLocation,
+                    symbol: bluepoint,
+                    attributes: {
+                        title: "İsrail"
+                    },
+                    popupTemplate: {
+                        title: "{title}"
+                    }
+                });
+
+                const irakGraphic = new Graphic({
+                    geometry: irakLocation,
+                    symbol: bluepoint,
+                    attributes: {
+                        title: "Irak"
+                    },
+                    popupTemplate: {
+                        title: "{title}"
+                    }
+                });
+
+                const guneyafrikaGraphic = new Graphic({
+                    geometry: guneyafrikaLocation,
+                    symbol: bluepoint,
+                    attributes: {
+                        title: "Güney Afrika"
+                    },
+                    popupTemplate: {
+                        title: "{title}"
+                    }
+                });
+
+                const suudiarabistanGraphic = new Graphic({
+                    geometry: suudiarabistanLocation,
+                    symbol: bluepoint,
+                    attributes: {
+                        title: "Suudi Arabistan"
+                    },
+                    popupTemplate: {
+                        title: "{title}"
+                    }
+                });
+
+                view.graphics.add(turkeyGraphic);
+                view.graphics.add(amerikaGraphic);
+                view.graphics.add(kanadaGraphic);
+                view.graphics.add(meksikaGraphic);
+                view.graphics.add(gronlandGraphic);
+                view.graphics.add(izlandaGraphic);
+                view.graphics.add(brezilyaGraphic);
+                view.graphics.add(cezayirGraphic);
+                view.graphics.add(fasGraphic);
+                view.graphics.add(ispanyaGraphic);
+                view.graphics.add(fransaGraphic);
+                view.graphics.add(ingiltereGraphic);
+                view.graphics.add(italyaGraphic);
+                view.graphics.add(almanyaGraphic);
+                view.graphics.add(polonyaGraphic);
+                view.graphics.add(isvecGraphic);
+                view.graphics.add(finlandiyaGraphic);
+                view.graphics.add(rusyaGraphic);
+                view.graphics.add(ukraynaGraphic);
+                view.graphics.add(romanyaGraphic);
+                view.graphics.add(yunanistanGraphic);
+                view.graphics.add(iranGraphic);
+                view.graphics.add(afganistanGraphic);
+                view.graphics.add(kazakistanGraphic);
+                view.graphics.add(cinGraphic);
+                view.graphics.add(hindistanGraphic);
+                view.graphics.add(kuzeykoreGraphic);
+                view.graphics.add(guneykoreGraphic);
+                view.graphics.add(japonyaGraphic);
+                view.graphics.add(avustralyaGraphic);
+                view.graphics.add(norvecGraphic);
+                view.graphics.add(misirGraphic);
+                view.graphics.add(israilGraphic);
+                view.graphics.add(irakGraphic);
+                view.graphics.add(guneyafrikaGraphic);
+                view.graphics.add(suudiarabistanGraphic);
+
+                // Çizgiler
 
                 // Amerika'dan Türkiye'ye doğru oluşturma
                 const lineAmerika = new Polyline
                     ({
-                        paths:
-                            [
-                                [[-100, 40], [35, 39]] // Amerika'dan Türkiye'ye
-                            ],
+                        paths: [[[-100, 40], [35, 39]]],
                         spatialReference: { wkid: 4326 } // Dünya coğrafi koordinat sistemi
                     });
 
                 // Kanada'dan Türkiye'ye doğru oluşturma
                 const lineKanada = new Polyline
                     ({
-                        paths: [
-                            [[-106, 56], [35, 39]] // Kanada'dan Türkiye'ye
-                        ],
-                        spatialReference: { wkid: 4326 } // Dünya coğrafi koordinat sistemi
+                        paths: [[[-106, 56], [35, 39]]],
+                        spatialReference: { wkid: 4326 }
                     });
 
                 // Meksika'dan Türkiye'ye doğru oluşturma
-                const lineMeksika = new Polyline({
-                    paths: [
-                        [[-102, 23], [35, 39]] // Meksika'dan Türkiye'ye
-                    ],
-                    spatialReference: { wkid: 4326 } // Dünya coğrafi koordinat sistemi
-                });
+                const lineMeksika = new Polyline
+                    ({
+                        paths: [[[-102, 23], [35, 39]]],
+                        spatialReference: { wkid: 4326 }
+                    });
 
                 // Grönland'dan Türkiye'ye doğru oluşturma
-                const lineGronland = new Polyline({
-                    paths: [
-                        [[-42, 72], [35, 39]] // Grönland'dan Türkiye'ye
-                    ],
-                    spatialReference: { wkid: 4326 } // Dünya coğrafi koordinat sistemi
-                });
+                const lineGronland = new Polyline
+                    ({
+                        paths: [[[-42, 72], [35, 39]]],
+                        spatialReference: { wkid: 4326 }
+                    });
 
                 // İzlanda'dan Türkiye'ye doğru oluşturma
-                const lineIzlanda = new Polyline({
-                    paths: [
-                        [[-19, 64], [35, 39]] // İzlanda'dan Türkiye'ye
-                    ],
-                    spatialReference: { wkid: 4326 } // Dünya coğrafi koordinat sistemi
-                });
+                const lineIzlanda = new Polyline
+                    ({
+                        paths: [[[-19, 64], [35, 39]]],
+                        spatialReference: { wkid: 4326 }
+                    });
 
                 // Brezilya'dan Türkiye'ye doğru oluşturma
-                const lineBrezilya = new Polyline({
-                    paths: [
-                        [[-51, -14], [35, 39]] // Brezilya'dan Türkiye'ye
-                    ],
-                    spatialReference: { wkid: 4326 } // Dünya coğrafi koordinat sistemi
-                });
+                const lineBrezilya = new Polyline
+                    ({
+                        paths: [[[-51, -14], [35, 39]]],
+                        spatialReference: { wkid: 4326 }
+                    });
 
                 // Cezayir'dan Türkiye'ye doğru oluşturma
-                const lineCezayir = new Polyline({
-                    paths: [
-                        [[-102, 23], [35, 39]] // Cezayir'dan Türkiye'ye
-                    ],
-                    spatialReference: { wkid: 4326 } // Dünya coğrafi koordinat sistemi
-                });
+                const lineCezayir = new Polyline
+                    ({
+                        paths: [[[-102, 23], [35, 39]]],
+                        spatialReference: { wkid: 4326 }
+                    });
 
                 // Fas'dan Türkiye'ye doğru oluşturma
-                const lineFas = new Polyline({
-                    paths: [
-                        [[-7, 31], [35, 39]] // Fas'dan Türkiye'ye
-                    ],
-                    spatialReference: { wkid: 4326 } // Dünya coğrafi koordinat sistemi
-                });
+                const lineFas = new Polyline
+                    ({
+                        paths: [[[-7, 31], [35, 39]]],
+                        spatialReference: { wkid: 4326 }
+                    });
 
                 // İspanya'dan Türkiye'ye doğru oluşturma
-                const lineIspanya = new Polyline({
-                    paths: [
-                        [[-3, 40], [35, 39]] // İspanya'dan Türkiye'ye
-                    ],
-                    spatialReference: { wkid: 4326 } // Dünya coğrafi koordinat sistemi
-                });
+                const lineIspanya = new Polyline
+                    ({
+                        paths: [[[-3, 40], [35, 39]]],
+                        spatialReference: { wkid: 4326 }
+                    });
 
                 // Fransa'dan Türkiye'ye doğru oluşturma
-                const lineFransa = new Polyline({
-                    paths: [
-                        [[2, 46], [35, 39]] // Fransa'dan Türkiye'ye
-                    ],
-                    spatialReference: { wkid: 4326 } // Dünya coğrafi koordinat sistemi
-                });
+                const lineFransa = new Polyline
+                    ({
+                        paths: [[[2, 46], [35, 39]]],
+                        spatialReference: { wkid: 4326 }
+                    });
 
                 // İngiltere'dan Türkiye'ye doğru oluşturma
-                const lineIngiltere = new Polyline({
-                    paths: [
-                        [[-1, 52], [35, 39]] // İngiltere'dan Türkiye'ye
-                    ],
-                    spatialReference: { wkid: 4326 } // Dünya coğrafi koordinat sistemi
-                });
+                const lineIngiltere = new Polyline
+                    ({
+                        paths: [[[-1, 52], [35, 39]]],
+                        spatialReference: { wkid: 4326 }
+                    });
 
                 // İtalya'dan Türkiye'ye doğru oluşturma
-                const lineItalya = new Polyline({
-                    paths: [
-                        [[12, 42], [35, 39]] // İtalya'dan Türkiye'ye
-                    ],
-                    spatialReference: { wkid: 4326 } // Dünya coğrafi koordinat sistemi
-                });
+                const lineItalya = new Polyline
+                    ({
+                        paths: [[[12, 42], [35, 39]]],
+                        spatialReference: { wkid: 4326 }
+                    });
 
                 // Almanya'dan Türkiye'ye doğru oluşturma
-                const lineAlmanya = new Polyline({
-                    paths: [
-                        [[10, 51], [35, 39]] // Almanya'dan Türkiye'ye
-                    ],
-                    spatialReference: { wkid: 4326 } // Dünya coğrafi koordinat sistemi
-                });
+                const lineAlmanya = new Polyline
+                    ({
+                        paths: [[[10, 51], [35, 39]]],
+                        spatialReference: { wkid: 4326 }
+                    });
 
                 // Polonya'dan Türkiye'ye doğru oluşturma
-                const linePolonya = new Polyline({
-                    paths: [
-                        [[19, 52], [35, 39]] // Polonya'dan Türkiye'ye
-                    ],
-                    spatialReference: { wkid: 4326 } // Dünya coğrafi koordinat sistemi
-                });
+                const linePolonya = new Polyline
+                    ({
+                        paths: [[[19, 52], [35, 39]]],
+                        spatialReference: { wkid: 4326 }
+                    });
 
                 // İsveç'dan Türkiye'ye doğru oluşturma
-                const lineIsvec = new Polyline({
-                    paths: [
-                        [[18, 60], [35, 39]] // İsveç'dan Türkiye'ye
-                    ],
-                    spatialReference: { wkid: 4326 } // Dünya coğrafi koordinat sistemi
-                });
+                const lineIsvec = new Polyline
+                    ({
+                        paths: [[[18, 60], [35, 39]]],
+                        spatialReference: { wkid: 4326 }
+                    });
 
                 // Finlandiya'dan Türkiye'ye doğru oluşturma
-                const lineFinlandiya = new Polyline({
-                    paths: [
-                        [[25, 61], [35, 39]] // Finlandiya'dan Türkiye'ye
-                    ],
-                    spatialReference: { wkid: 4326 } // Dünya coğrafi koordinat sistemi
-                });
+                const lineFinlandiya = new Polyline
+                    ({
+                        paths: [[[25, 61], [35, 39]]],
+                        spatialReference: { wkid: 4326 }
+                    });
 
                 // Rusya'dan Türkiye'ye doğru oluşturma
-                const lineRusya = new Polyline({
-                    paths: [
-                        [[105, 56], [35, 39]] // Rusya'dan Türkiye'ye
-                    ],
-                    spatialReference: { wkid: 4326 } // Dünya coğrafi koordinat sistemi
-                });
+                const lineRusya = new Polyline
+                    ({
+                        paths: [[[105, 56], [35, 39]]],
+                        spatialReference: { wkid: 4326 }
+                    });
 
                 // Ukrayna'dan Türkiye'ye doğru oluşturma
-                const lineUkrayna = new Polyline({
-                    paths: [
-                        [[31, 49], [35, 39]] // Ukrayna'dan Türkiye'ye
-                    ],
-                    spatialReference: { wkid: 4326 } // Dünya coğrafi koordinat sistemi
-                });
+                const lineUkrayna = new Polyline
+                    ({
+                        paths: [[[31, 49], [35, 39]]],
+                        spatialReference: { wkid: 4326 }
+                    });
 
                 // Romanya'dan Türkiye'ye doğru oluşturma
-                const lineRomanya = new Polyline({
-                    paths: [
-                        [[-102, 23], [35, 39]] // Romanya'dan Türkiye'ye
-                    ],
-                    spatialReference: { wkid: 4326 } // Dünya coğrafi koordinat sistemi
-                });
+                const lineRomanya = new Polyline
+                    ({
+                        paths: [[[-102, 23], [35, 39]]],
+                        spatialReference: { wkid: 4326 }
+                    });
 
                 // Yunanistan'dan Türkiye'ye doğru oluşturma
-                const lineYunanistan = new Polyline({
-                    paths: [
-                        [[22, 39], [35, 39]] // Yunanistan'dan Türkiye'ye
-                    ],
-                    spatialReference: { wkid: 4326 } // Dünya coğrafi koordinat sistemi
-                });
+                const lineYunanistan = new Polyline
+                    ({
+                        paths: [[[22, 39], [35, 39]]],
+                        spatialReference: { wkid: 4326 }
+                    });
 
                 // İran'dan Türkiye'ye doğru oluşturma
-                const lineIran = new Polyline({
-                    paths: [
-                        [[53, 32], [35, 39]] // İran'dan Türkiye'ye
-                    ],
-                    spatialReference: { wkid: 4326 } // Dünya coğrafi koordinat sistemi
-                });
+                const lineIran = new Polyline
+                    ({
+                        paths: [[[53, 32], [35, 39]]],
+                        spatialReference: { wkid: 4326 }
+                    });
 
                 // Afganistan'dan Türkiye'ye doğru oluşturma
-                const lineAfganistan = new Polyline({
-                    paths: [
-                        [[66, 34], [35, 39]] // Afganistan'dan Türkiye'ye
-                    ],
-                    spatialReference: { wkid: 4326 } // Dünya coğrafi koordinat sistemi
-                });
+                const lineAfganistan = new Polyline
+                    ({
+                        paths: [[[66, 34], [35, 39]]],
+                        spatialReference: { wkid: 4326 }
+                    });
 
                 // Kazakistan'dan Türkiye'ye doğru oluşturma
-                const lineKazakistan = new Polyline({
-                    paths: [
-                        [[67, 48], [35, 39]] // Kazakistan'dan Türkiye'ye
-                    ],
-                    spatialReference: { wkid: 4326 } // Dünya coğrafi koordinat sistemi
-                });
+                const lineKazakistan = new Polyline
+                    ({
+                        paths: [[[67, 48], [35, 39]]],
+                        spatialReference: { wkid: 4326 }
+                    });
 
                 // Çin'den Türkiye'ye doğru oluşturma
-                const lineCin = new Polyline({
-                    paths: [
-                        [[104, 35], [35, 39]] // Çin'den Türkiye'ye
-                    ],
-                    spatialReference: { wkid: 4326 } // Dünya coğrafi koordinat sistemi
-                });
+                const lineCin = new Polyline
+                    ({
+                        paths: [[[104, 35], [35, 39]]],
+                        spatialReference: { wkid: 4326 }
+                    });
 
                 // Hindistan'dan Türkiye'ye doğru oluşturma
-                const lineHindistan = new Polyline({
-                    paths: [
-                        [[78, 21], [35, 39]] // Hindistan'dan Türkiye'ye
-                    ],
-                    spatialReference: { wkid: 4326 } // Dünya coğrafi koordinat sistemi
-                });
+                const lineHindistan = new Polyline
+                    ({
+                        paths: [[[78, 21], [35, 39]]],
+                        spatialReference: { wkid: 4326 }
+                    });
 
                 // Kuzey Kore'dan Türkiye'ye doğru oluşturma
-                const lineKuzeyKore = new Polyline({
-                    paths: [
-                        [[127, 40], [35, 39]] // Kuzey Kore'dan Türkiye'ye
-                    ],
-                    spatialReference: { wkid: 4326 } // Dünya coğrafi koordinat sistemi
-                });
+                const lineKuzeyKore = new Polyline
+                    ({
+                        paths: [[[127, 40], [35, 39]]],
+                        spatialReference: { wkid: 4326 }
+                    });
 
                 // Güney Kore'dan Türkiye'ye doğru oluşturma
-                const lineGuneyKore = new Polyline({
-                    paths: [
-                        [[127.5, 37], [35, 39]] // Güney Kore'dan Türkiye'ye
-                    ],
-                    spatialReference: { wkid: 4326 } // Dünya coğrafi koordinat sistemi
-                });
+                const lineGuneyKore = new Polyline
+                    ({
+                        paths: [[[127.5, 37], [35, 39]]],
+                        spatialReference: { wkid: 4326 }
+                    });
 
                 // Japonya'dan Türkiye'ye doğru oluşturma
-                const lineJaponya = new Polyline({
-                    paths: [
-                        [[138, 36], [35, 39]] // Japonya'dan Türkiye'ye
-                    ],
-                    spatialReference: { wkid: 4326 } // Dünya coğrafi koordinat sistemi
-                });
+                const lineJaponya = new Polyline
+                    ({
+                        paths: [[[138, 36], [35, 39]]],
+                        spatialReference: { wkid: 4326 }
+                    });
 
                 // Avustralya'dan Türkiye'ye doğru oluşturma
-                const lineAvustralya = new Polyline({
-                    paths: [
-                        [[133, -25], [35, 39]] // Avustralya'dan Türkiye'ye
-                    ],
-                    spatialReference: { wkid: 4326 } // Dünya coğrafi koordinat sistemi
-                });
+                const lineAvustralya = new Polyline
+                    ({
+                        paths: [[[133, -25], [35, 39]]],
+                        spatialReference: { wkid: 4326 }
+                    });
 
                 // Norveç'dan Türkiye'ye doğru oluşturma
-                const lineNorvec = new Polyline({
-                    paths: [
-                        [[10, 61], [35, 39]] // Norveç'dan Türkiye'ye
-                    ],
-                    spatialReference: { wkid: 4326 } // Dünya coğrafi koordinat sistemi
-                });
+                const lineNorvec = new Polyline
+                    ({
+                        paths: [[[10, 61], [35, 39]]],
+                        spatialReference: { wkid: 4326 }
+                    });
 
                 // Mısır'dan Türkiye'ye doğru oluşturma
-                const lineMisir = new Polyline({
-                    paths: [
-                        [[30, 26], [35, 39]] // Mısır'dan Türkiye'ye
-                    ],
-                    spatialReference: { wkid: 4326 } // Dünya coğrafi koordinat sistemi
-                });
+                const lineMisir = new Polyline
+                    ({
+                        paths: [[[30, 26], [35, 39]]],
+                        spatialReference: { wkid: 4326 }
+                    });
 
                 // İsrail'dan Türkiye'ye doğru oluşturma
-                const lineIsrail = new Polyline({
-                    paths: [
-                        [[35, 31], [35, 39]] // İsrail'dan Türkiye'ye
-                    ],
-                    spatialReference: { wkid: 4326 } // Dünya coğrafi koordinat sistemi
-                });
+                const lineIsrail = new Polyline
+                    ({
+                        paths: [[[35, 31], [35, 39]]],
+                        spatialReference: { wkid: 4326 }
+                    });
 
                 // Irak'dan Türkiye'ye doğru oluşturma
-                const lineIrak = new Polyline({
-                    paths: [
-                        [[44, 33], [35, 39]] // Irak'dan Türkiye'ye
-                    ],
-                    spatialReference: { wkid: 4326 } // Dünya coğrafi koordinat sistemi
-                });
+                const lineIrak = new Polyline
+                    ({
+                        paths: [[[44, 33], [35, 39]]],
+                        spatialReference: { wkid: 4326 }
+                    });
 
                 // Güney Afrika'dan Türkiye'ye doğru oluşturma
-                const lineGuneyAfrika = new Polyline({
-                    paths: [
-                        [[24, -29], [35, 39]] // Güney Afrika'dan Türkiye'ye
-                    ],
-                    spatialReference: { wkid: 4326 } // Dünya coğrafi koordinat sistemi
-                });
+                const lineGuneyAfrika = new Polyline
+                    ({
+                        paths: [[[24, -29], [35, 39]]],
+                        spatialReference: { wkid: 4326 }
+                    });
 
                 // Suudi Arabistan'dan Türkiye'ye doğru oluşturma
-                const lineSuudiArabistan = new Polyline({
-                    paths: [
-                        [[45, 24], [35, 39]] // Suudi Arabistan'dan Türkiye'ye
-                    ],
-                    spatialReference: { wkid: 4326 } // Dünya coğrafi koordinat sistemi
-                });
+                const lineSuudiArabistan = new Polyline
+                    ({
+                        paths: [[[45, 24], [35, 39]]],
+                        spatialReference: { wkid: 4326 }
+                    });
 
+                // Libya'dan Türkiye'ye doğru oluşturma
                 const lineLibya = new Polyline
                     ({
-                        paths:
-                            [
-                                [[17, 26], [35, 39]]
-                            ], // Libya'dan Türkiye'ye
+                        paths: [[[17, 26], [35, 39]]],
                         spatialReference: { wkid: 4326 }
                     });
 
+                // Madagaskar'dan Türkiye'ye doğru oluşturma
                 const lineMadagaskar = new Polyline
                     ({
-                        paths: [[[47, -20], [35, 39]]], // Madagaskar'dan Türkiye'ye
+                        paths: [[[47, -20], [35, 39]]],
                         spatialReference: { wkid: 4326 }
                     });
 
+                // Mali'den Türkiye'ye
                 const lineMali = new Polyline
                     ({
-                        paths:
-                            [
-                                [[-4, 17], [35, 39]]
-                            ], // Mali'den Türkiye'ye
+                        paths: [[[-4, 17], [35, 39]]],
                         spatialReference: { wkid: 4326 }
                     });
 
+                // Peru'dan Türkiye'ye
                 const linePeru = new Polyline
                     ({
-                        paths:
-                            [
-                                [[-76, -10], [35, 39]]
-                            ], // Peru'dan Türkiye'ye
+                        paths: [[[-76, -10], [35, 39]]],
                         spatialReference: { wkid: 4326 }
                     });
 
+                // Tayland'dan Türkiye'ye
                 const lineTayland = new Polyline
                     ({
-                        paths:
-                            [
-                                [[101, 15], [35, 39]]
-                            ], // Tayland'dan Türkiye'ye
+                        paths: [[[101, 15], [35, 39]]],
                         spatialReference: { wkid: 4326 }
                     });
 
+                // Çizgilerin Renkleri
 
-                // Çizgi sembolü tanımlama
-                const lineSymbol = new SimpleLineSymbol
-                    ({
-                        color: [0, 0, 255], // Kırmızı renk
-                        width: 2 // Çizgi kalınlığı
-                    });
+                const lineSymbol = new SimpleLineSymbol({
+                    color: [0, 0, 255], // Mavi Çizgi
+                    width: 2
+                });
 
-                async function startAnimation(line, title) {
+                const parabolaLineSymbol = new SimpleLineSymbol({
+                    color: [255, 0, 0], // Kırmızı Çizgi
+                    width: 2
+                });
+
+                const greenLineSymbol = new SimpleLineSymbol({
+                    color: [0, 255, 0], // Yeşil Çizgi
+                    width: 1
+                });
+
+                // Animasyonu Başlat
+
+                async function startAnimation(line, title, symbol, parabola = false, inverseParabola = false) {
+                    const currentGraphics = [];
                     return new Promise((resolve) => {
-                        // Adım sayısı
-                        const numSteps = 100; // Daha yumuşak bir animasyon için adım sayısını artırabilirsiniz
-
-                        // Çizgi adımlarını hesaplama
+                        const numSteps = 100;
                         const lineSteps = [];
                         for (let i = 0; i <= numSteps; i++) {
+                            const t = i / numSteps;
                             const startCoords = line.paths[0][0];
                             const endCoords = line.paths[0][1];
                             const stepCoords = [
-                                startCoords[0] + (endCoords[0] - startCoords[0]) * (i / numSteps),
-                                startCoords[1] + (endCoords[1] - startCoords[1]) * (i / numSteps)
+                                startCoords[0] + (endCoords[0] - startCoords[0]) * t,
+                                startCoords[1] + (endCoords[1] - startCoords[1]) * t,
+                                0
                             ];
+                            if (parabola) {
+                                const height = 1000000; // Parabolanın yüksekliği
+                                stepCoords[2] = 4 * height * t * (1 - t); // Parabolik yükseklik ekleme
+                            }
+                            if (inverseParabola) {
+                                const height = 1500000; // Parabolanın yüksekliği
+                                stepCoords[2] = 4 * height * t * (1 - t); // Parabolik yükseklik ekleme
+                            }
                             lineSteps.push(stepCoords);
                         }
 
-                        // Çizgi adımlarını animasyonlu olarak haritaya ekleme
                         let stepIndex = 0;
                         const animateLine = setInterval(() => {
                             if (stepIndex < numSteps) {
@@ -487,28 +1056,25 @@
 
                                 const animatedLineGraphic = new Graphic({
                                     geometry: animatedLine,
-                                    symbol: lineSymbol,
+                                    symbol: symbol,
                                     attributes: {
                                         title: title
                                     },
-                                    popupTemplate:
-                                    {
+                                    popupTemplate: {
                                         title: "{title}"
                                     }
                                 });
+                                currentGraphics.push(animatedLineGraphic);
                                 view.graphics.add(animatedLineGraphic);
                                 stepIndex++;
-                            }
-
-                            else {
+                            } else {
                                 clearInterval(animateLine);
-                                resolve(); // Animasyon bittiğinde Promise'i çöz
+                                resolve(currentGraphics);
                             }
-                        }, 50); // Her adım arası süre (milisaniye cinsinden)
+                        }, 50);
                     });
                 }
 
-                // Tıklama olayını dinleme
                 view.on("click", function (event) {
                     view.hitTest(event).then(function (response) {
                         const results = response.results;
@@ -518,72 +1084,123 @@
                             })[0].graphic;
 
                             if (graphic) {
-                                view.popup.open
-                                    ({
-                                        location: event.mapPoint,
-                                        title: graphic.attributes.title,
-                                        content: graphic.attributes.description
-                                    });
+                                view.popup.open({
+                                    location: event.mapPoint,
+                                    title: graphic.attributes.title,
+                                    content: graphic.attributes.description
+                                });
                             }
                         }
-                    }
-                    );
+                    });
                 });
 
-                async function runAnimations(line, title, times) {
-                    for (let i = 0; i < times; i++) {
-                        // Haritadaki grafiklerin temizlenmesi
-                        view.graphics.removeAll();
-
-                        // Animasyonu başlat ve bitmesini bekle
-                        await startAnimation(line, title);
+                async function runAnimations(line, title, symbol, parabola = false, inverseParabola = false) {
+                    while (true) {
+                        const currentGraphics = await startAnimation(line, title, symbol, parabola, inverseParabola);
+                        view.graphics.removeMany(currentGraphics);
+                        await new Promise(r => setTimeout(r, Math.random() * 6000)); // 6 saniye rastgele
                     }
                 }
 
-                // Animasyonu 100 kez başlatma
-                runAnimations(lineAmerika, "Amerika'dan Türkiye'ye <br> 🟦 - Orta Saldırılar <br> 🟥 - Ağır Saldırılar", 100);
-                runAnimations(lineKanada, "Kanada'dan Türkiye'ye <br> 🟩 - Hafif Saldırılar <br> 🟥 - Ağır Saldırılar", 100);
-                runAnimations(lineMeksika, "Meksika'dan Türkiye'ye <br> 🟩 - Hafif Saldırılar <br> 🟦 - Orta Saldırılar", 100);
-                runAnimations(lineGronland, "Grönland'dan Türkiye'ye <br> 🟩 - Hafif Saldırılar <br> 🟥 - Ağır Saldırılar", 100);
-                runAnimations(lineIzlanda, "İzlanda'dan Türkiye'ye <br> 🟩 - Hafif Saldırılar", 100);
-                runAnimations(lineBrezilya, "Brezilya'dan Türkiye'ye <br> 🟦 - Orta Saldırılar", 100);
-                runAnimations(lineFas, "Fas'dan Türkiye'ye <br> 🟦 - Orta Saldırılar <br> 🟥 - Ağır Saldırılar", 100);
-                runAnimations(lineIspanya, "İspanya'dan Türkiye'ye <br> 🟩 - Hafif Saldırılar", 100);
-                runAnimations(lineFransa, "Fransa'dan Türkiye'ye <br> 🟦 - Orta Saldırılar", 100);
-                runAnimations(lineIngiltere, "İngiltere'den Türkiye'ye <br> 🟩 - Hafif Saldırılar", 100);
-                runAnimations(lineItalya, "İtalya'dan Türkiye'ye <br> 🟥 - Ağır Saldırılar", 100);
-                runAnimations(lineAlmanya, "Almanya'dan Türkiye'ye <br> 🟩 - Hafif Saldırılar <br> 🟦 - Orta Saldırılar <br> 🟥 - Ağır Saldırılar", 100);
-                runAnimations(linePolonya, "Polonya'dan Türkiye'ye <br> 🟦 - Orta Saldırılar <br> 🟥 - Ağır Saldırılar", 100);
-                runAnimations(lineIsvec, "İsveç'ten Türkiye'ye <br> 🟩 - Hafif Saldırılar <br> 🟥 - Ağır Saldırılar", 100);
-                runAnimations(lineFinlandiya, "Finlandiya'dan Türkiye'ye <br> 🟩 - Hafif Saldırılar <br> 🟦 - Orta Saldırılar", 100);
-                runAnimations(lineRusya, "Rusya'dan Türkiye'ye <br> 🟩 - Hafif Saldırılar <br> 🟥 - Ağır Saldırılar", 100);
-                runAnimations(lineUkrayna, "Ukrayna'dan Türkiye'ye <br> 🟩 - Hafif Saldırılar", 100);
-                runAnimations(lineYunanistan, "Yunanistan'dan Türkiye'ye <br> 🟩 - Hafif Saldırılar <br> 🟦 - Orta Saldırılar", 100);
-                runAnimations(lineIran, "İran'dan Türkiye'ye <br> 🟥 - Ağır Saldırılar", 100);
-                runAnimations(lineAfganistan, "Afganistan'dan Türkiye'ye <br> 🟩 - Hafif Saldırılar <br> 🟦 - Orta Saldırılar <br> 🟥 - Ağır Saldırılar", 100);
-                runAnimations(lineKazakistan, "Kazakistan'dan Türkiye'ye <br> 🟦 - Orta Saldırılar <br> 🟥 - Ağır Saldırılar", 100);
-                runAnimations(lineCin, "Çin'den Türkiye'ye <br> 🟩 - Hafif Saldırılar <br> 🟦 - Orta Saldırılar", 100);
-                runAnimations(lineHindistan, "Hindistan'dan Türkiye'ye <br> 🟩 - Hafif Saldırılar <br> 🟥 - Ağır Saldırılar", 100);
-                runAnimations(lineKuzeyKore, "Kuzey Kore'den Türkiye'ye <br> 🟦 - Orta Saldırılar", 100);
-                runAnimations(lineGuneyKore, "Güney Kore'den Türkiye'ye <br> 🟥 - Ağır Saldırılar", 100);
-                runAnimations(lineJaponya, "Japonya'dan Türkiye'ye <br> 🟩 - Hafif Saldırılar <br> 🟦 - Orta Saldırılar <br> 🟥 - Ağır Saldırılar", 100);
-                runAnimations(lineAvustralya, "Avustralya'dan Türkiye'ye <br> 🟩 - Hafif Saldırılar", 100);
-                runAnimations(lineNorvec, "Norveç'ten Türkiye'ye <br> 🟦 - Orta Saldırılar <br> 🟥 - Ağır Saldırılar", 100);
-                runAnimations(lineMisir, "Mısır'dan Türkiye'ye <br> 🟥 - Ağır Saldırılar", 100);
-                runAnimations(lineIsrail, "İsrail'den Türkiye'ye <br> 🟦 - Orta Saldırılar", 100);
-                runAnimations(lineIrak, "Irak'dan Türkiye'ye <br> 🟩 - Hafif Saldırılar <br> 🟦 - Orta Saldırılar", 100);
-                runAnimations(lineGuneyAfrika, "Güney Afrika'dan Türkiye'ye <br> 🟥 - Ağır Saldırılar", 100);
-                runAnimations(lineSuudiArabistan, "Suudi Arabistan'dan Türkiye'ye <br> 🟩 - Hafif Saldırılar <br> 🟦 - Orta Saldırılar", 100);
-                runAnimations(lineTayland, "Tayland'dan Türkiye'ye <br> 🟩 - Hafif Saldırılar <br> 🟦 - Orta Saldırılar <br> 🟥 - Ağır Saldırılar", 100);
-                runAnimations(lineMadagaskar, "Libya'dan Türkiye'ye <br> 🟩 - Hafif Saldırılar", 100);
-                runAnimations(lineLibya, "Madagaskar'dan Türkiye'ye <br> 🟩 - Hafif Saldırılar", 100);
-                runAnimations(lineMali, "Mali'den Türkiye'ye <br> 🟩 - Hafif Saldırılar", 100);
-                runAnimations(linePeru, "Peru'dan Türkiye'ye <br> 🟩 - Hafif Saldırılar", 100);
+                runAnimations(lineAfganistan, "Afganistan'dan Türkiye'ye <br>🟩 - Hafif Saldırılar", greenLineSymbol, false, true);
+
+                runAnimations(lineAlmanya, "Almanya'dan Türkiye'ye <br>🟩 - Hafif Saldırılar", greenLineSymbol, false, true);
+
+                runAnimations(lineAmerika, "Amerika'dan Türkiye'ye <br> 🟦 - Orta Saldırılar <br> 🟥 - Ağır Saldırılar", lineSymbol);
+                runAnimations(lineAmerika, "Amerika'dan Türkiye'ye <br> 🟥 - Ağır Saldırılar", parabolaLineSymbol, true);
+
+                runAnimations(lineAvustralya, "Avustralya'dan Türkiye'ye <br> 🟥 - Ağır Saldırılar", parabolaLineSymbol, true);
+                runAnimations(lineAvustralya, "Avustralya'dan Türkiye'ye <br> 🟩 - Hafif Saldırılar", greenLineSymbol, false, true);
+
+                runAnimations(lineBrezilya, "Brezilya'dan Türkiye'ye <br> 🟦 - Orta Saldırılar", lineSymbol);
+
+                runAnimations(lineCin, "Çin'den Türkiye'ye <br> 🟦 - Orta Saldırılar", lineSymbol);
+                runAnimations(lineCin, "Çin'den Türkiye'ye <br> 🟩 - Hafif Saldırılar", greenLineSymbol, false, true);
+
+                runAnimations(lineFas, "Fas'dan Türkiye'ye <br> 🟦 - Orta Saldırılar", lineSymbol);
+                runAnimations(lineFas, "Fas'dan Türkiye'ye <br> 🟥 - Ağır Saldırılar", parabolaLineSymbol, true);
+
+                runAnimations(lineFinlandiya, "Finlandiya'dan Türkiye'ye <br> 🟦 - Orta Saldırılar", lineSymbol);
+                runAnimations(lineFinlandiya, "Finlandiya'dan Türkiye'ye <br> 🟩 - Hafif Saldırılar", greenLineSymbol, false, true);
+
+                runAnimations(lineFransa, "Fransa'dan Türkiye'ye <br> 🟦 - Orta Saldırılar", lineSymbol);
+
+                runAnimations(lineGronland, "Grönland'dan Türkiye'ye <br> 🟥 - Ağır Saldırılar", parabolaLineSymbol, true);
+                runAnimations(lineGronland, "Grönland'dan Türkiye'ye <br> 🟩 - Hafif Saldırılar", greenLineSymbol, false, true);
+
+                runAnimations(lineGuneyAfrika, "Güney Afrika'dan Türkiye'ye <br> 🟥 - Ağır Saldırılar", parabolaLineSymbol, true);
+
+                runAnimations(lineGuneyKore, "Güney Kore'den Türkiye'ye <br> 🟥 - Ağır Saldırılar", parabolaLineSymbol, true);
+
+                runAnimations(lineHindistan, "Hindistan'dan Türkiye'ye <br> 🟥 - Ağır Saldırılar", parabolaLineSymbol, true);
+                runAnimations(lineHindistan, "Hindistan'dan Türkiye'ye <br> 🟩 - Hafif Saldırılar", greenLineSymbol, false, true);
+
+                runAnimations(lineIrak, "Irak'dan Türkiye'ye <br> 🟦 - Orta Saldırılar", lineSymbol);
+                runAnimations(lineIrak, "Irak'dan Türkiye'ye <br> 🟩 - Hafif Saldırılar", greenLineSymbol, false, true);
+
+                runAnimations(lineIngiltere, "İngiltere'den Türkiye'ye <br> 🟩 - Hafif Saldırılar", greenLineSymbol, false, true);
+
+                runAnimations(lineIran, "İran'dan Türkiye'ye <br> 🟥 - Ağır Saldırılar", parabolaLineSymbol, true);
+
+                runAnimations(lineIspanya, "İspanya'dan Türkiye'ye <br> 🟩 - Hafif Saldırılar", greenLineSymbol, false, true);
+
+                runAnimations(lineIsrail, "İsrail'den Türkiye'ye <br> 🟦 - Orta Saldırılar", lineSymbol);
+
+                runAnimations(lineIsvec, "İsveç'den Türkiye'ye <br> 🟥 - Ağır Saldırılar", parabolaLineSymbol, true);
+                runAnimations(lineIsvec, "İsveç'den Türkiye'ye <br> 🟩 - Hafif Saldırılar", greenLineSymbol, false, true);
+
+                runAnimations(lineItalya, "İtalya'dan Türkiye'ye <br> 🟥 - Ağır Saldırılar", parabolaLineSymbol, true);
+
+                runAnimations(lineIzlanda, "İzlanda'dan Türkiye'ye <br> 🟩 - Hafif Saldırılar", greenLineSymbol, false, true);
+
+                runAnimations(lineJaponya, "Japonya'dan Türkiye'ye <br> 🟦 - Orta Saldırılar", lineSymbol);
+                runAnimations(lineJaponya, "Japonya'dan Türkiye'ye <br> 🟥 - Ağır Saldırılar", parabolaLineSymbol, true);
+                runAnimations(lineJaponya, "Japonya'dan Türkiye'ye <br> 🟩 - Hafif Saldırılar", greenLineSymbol, false, true);
+
+                runAnimations(lineKanada, "Kanada'dan Türkiye'ye <br> 🟥 - Ağır Saldırılar", parabolaLineSymbol, true);
+                runAnimations(lineKanada, "Kanada'dan Türkiye'ye <br> 🟩 - Hafif Saldırılar", greenLineSymbol, false, true);
+
+                runAnimations(lineKazakistan, "Kazakistan'dan Türkiye'ye <br> 🟦 - Orta Saldırılar", lineSymbol);
+                runAnimations(lineKazakistan, "Kazakistan'dan Türkiye'ye <br> 🟥 - Ağır Saldırılar", parabolaLineSymbol, true);
+
+                runAnimations(lineKuzeyKore, "Kuzey Kore'den Türkiye'ye <br> 🟦 - Orta Saldırılar", lineSymbol);
+
+                runAnimations(lineLibya, "Libya'dan Türkiye'ye <br> 🟩 - Hafif Saldırılar", greenLineSymbol, false, true);
+
+                runAnimations(lineMadagaskar, "Madagaskar'dan Türkiye'ye <br> 🟩 - Hafif Saldırılar", greenLineSymbol, false, true);
+
+                runAnimations(lineMali, "Mali'den Türkiye'ye <br> 🟩 - Hafif Saldırılar", greenLineSymbol, false, true);
+
+                runAnimations(lineMeksika, "Meksika'dan Türkiye'ye <br> 🟦 - Orta Saldırılar", lineSymbol);
+                runAnimations(lineMeksika, "Meksika'dan Türkiye'ye <br> 🟩 - Hafif Saldırılar", greenLineSymbol, false, true);
+
+                runAnimations(lineNorvec, "Norveç'den Türkiye'ye <br> 🟦 - Orta Saldırılar", lineSymbol);
+                runAnimations(lineNorvec, "Norveç'den Türkiye'ye <br> 🟥 - Ağır Saldırılar", parabolaLineSymbol, true);
+
+                runAnimations(linePeru, "Peru'dan Türkiye'ye <br> 🟦 - Orta Saldırılar", lineSymbol);
+
+                runAnimations(linePolonya, "Polonya'dan Türkiye'ye <br> 🟦 - Orta Saldırılar", lineSymbol);
+                runAnimations(linePolonya, "Polonya'dan Türkiye'ye <br> 🟥 - Ağır Saldırılar", parabolaLineSymbol, true);
+
+                runAnimations(lineRusya, "Rusya'dan Türkiye'ye <br> 🟥 - Ağır Saldırılar", parabolaLineSymbol, true);
+                runAnimations(lineRusya, "Rusya'dan Türkiye'ye <br> 🟩 - Hafif Saldırılar", greenLineSymbol, false, true);
+
+                runAnimations(lineUkrayna, "Ukrayna'dan Türkiye'ye <br> 🟩 - Hafif Saldırılar", greenLineSymbol, false, true);
+
+                runAnimations(lineYunanistan, "Yunanistan'dan Türkiye'ye <br> 🟦 - Orta Saldırılar", lineSymbol);
+                runAnimations(lineYunanistan, "Yunanistan'dan Türkiye'ye <br> 🟩 - Hafif Saldırılar", greenLineSymbol, false, true);
+
+                runAnimations(lineSuudiArabistan, "Suudi Arabistan'dan Türkiye'ye <br> 🟦 - Orta Saldırılar", lineSymbol);
+                runAnimations(lineSuudiArabistan, "Suudi Arabistan'dan Türkiye'ye <br> 🟩 - Hafif Saldırılar", greenLineSymbol, false, true);
+
+                runAnimations(lineTayland, "Tayland'dan Türkiye'ye <br> 🟦 - Orta Saldırılar", lineSymbol);
+                runAnimations(lineTayland, "Tayland'dan Türkiye'ye <br> 🟥 - Ağır Saldırılar", parabolaLineSymbol, true);
+                runAnimations(lineTayland, "Tayland'dan Türkiye'ye <br> 🟩 - Hafif Saldırılar", greenLineSymbol, false, true);
+
+                runAnimations(lineMisir, "Mısır'dan Türkiye'ye <br> 🟥 - Ağır Saldırılar", parabolaLineSymbol, true);
             });
         }
-        // Sayfa yüklendiğinde animasyonu başlatma
         document.addEventListener("DOMContentLoaded", drawAnimation);
     </script>
     <div id="viewDiv"></div>
-    </body>
-<</html>
+</body>
