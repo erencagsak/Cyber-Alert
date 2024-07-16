@@ -14,9 +14,18 @@ What did i use program/language for make this project ?
 - CSS ( WebSite HTML codes design )
 - MSSQL ( For Database )
 
+<h3>Users can view the attacks on Turkey on certain dates through this button.</h3>
+
+![Ekran görüntüsü 2024-05-22 231232](https://github.com/user-attachments/assets/862ff47e-335a-445b-8b49-a48e7037cc47)
+
 <h3>This is how 2D map looks like</h3>
 
 ![Screenshot (72)](https://github.com/user-attachments/assets/0357e92c-1a99-4b28-b37b-d4761c2c810c)
+
+<h3>This is how 2D map looks like after user search</h3>
+
+![Ekran Görüntüsü (439)](https://github.com/user-attachments/assets/f8dc663e-99f6-4eba-98c3-6e69df02b5a2)
+
 
 <h3>This is how 3D map looks like</h3>
 
