@@ -5,14 +5,14 @@
 <p>How this project working ?
 Users have a button for check dates ( which dates are in the database ), typing a date on textbox and click the "search" button. And it's showing all attacks to Turkey on the 2D map or 3D map.</p>
 
-<p>What did i use program/language for make this project ?
+<p>What did i use program/language for make this project ?</p>
 - Visual Studio IDE 2022
 - Visual Studio Code ( For edit HTML, CSS codes )
 - ASP.NET - MVC module
 - JavaScript ( blue, red, green points and lines on 2D, 3D Map, these lines represent attacks. )
 - HTML ( WebSite design )
 - CSS ( WebSite HTML codes design )
-- MSSQL ( For Database )</p>
+- MSSQL ( For Database )
 
 <h3>This is how 2D map looks like</h3>
 
